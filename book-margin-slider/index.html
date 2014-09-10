@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Slide you favorite margin</title>
+	<link rel="stylesheet" href="css.css">
+</head>
+<body>
+	<div>
+		<h1>An old margin slider</h1>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<input type="range" step="0.1" min="0" max="22" value="11">
+	</div>
+
+
+<script>
+
+var range = document.querySelector('[type=range]');
+	
+range.oninput = function() {
+	var val = range.value;
+	var div = document.querySelector('div');
+	document.body.style.margin = val+'vh '+ val + 'vw ' + val*2 + 'vh';
+	div.style.MozColumnGap = val+'vw';
+	div.style.WebkitColumnGap = val+'vw';
+	div.style.columnGap = val+'vw';
+}
+
+
+</script>
+</body>
+</html>

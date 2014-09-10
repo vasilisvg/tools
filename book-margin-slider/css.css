@@ -1,0 +1,39 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 11vh 11vw 22vh;
+}
+[type="range"] {
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+h1 {
+	margin: 0 0 1em;
+}
+div {
+	background: #ebebeb;
+	-webkit-column-rule: solid red 1px;
+	   -moz-column-rule: solid red 1px;
+	        column-rule: solid red 1px;
+	-webkit-column-gap: 11vw;
+	   -moz-column-gap: 11vw;
+	        column-gap: 11vw;
+	-webkit-columns: 2;
+	   -moz-columns: 2;
+	        columns: 2;
+}
+div p {
+	text-align: justify;
+}
+
+@media (max-width: 100ch) {
+	div {
+		-webkit-columns: 1;
+		   -moz-columns: 1;
+		        columns: 1;
+	}
+}
