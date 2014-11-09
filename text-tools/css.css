@@ -1,0 +1,42 @@
+form {
+	position: fixed;
+	top: 0;
+	right: 0;
+	background: white;
+	height: 100vh;
+	overflow-y: scroll; 
+}
+form, select, input {
+	font-size: 1em !important;
+	font-family: helvetica !important;
+	font-size: 16px !important;
+	line-height: 1.5 !important;
+}
+input:focus, select:focus {
+	box-shadow: 0 0 .2em .2em hsla(150,50%,40%,.5)
+}
+.pefect input:focus, .pefect select:focus {
+	box-shadow: 0 0 .2em .2em hsla(90,50%,50%,.5)
+}
+.alert input:focus, .alert select:focus {
+	box-shadow: 0 0 .2em .2em hsla(0,50%,50%,.5)
+}
+label {
+	display: block;
+	border-bottom: 1px solid #ebebeb;
+	margin: 0 0 .3em;
+	padding: 0 0 .3em;
+}
+label input,
+label select {
+	display: block;
+}
+label input[type="checkbox"] {
+	display: inline-block;
+}
+.alert output {
+	color: red
+}
+.pefect output {
+	color: green;
+}

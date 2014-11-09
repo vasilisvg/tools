@@ -1,0 +1,46 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 11vh 11vw 22vh;
+	background-color: hsl(0,0%,98%);
+    background-image: url(../complete-octavoformat.svg);
+    background-size: 100% 100vh;
+    background-attachment: fixed;
+    background-position: 0 0;
+}
+form {
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+h1,
+h2 {
+	margin: 0 0 1em;
+}
+div,
+aside {
+	float: left;
+	width: calc(50% - 5.5vw);
+	margin: 0 5.5vw 0 0;
+	background: white;
+}
+aside {
+	margin: 0 0 0 5.5vw;
+}
+aside article {
+	background: #ebebeb;
+}
+div p {
+	text-align: justify;
+}
+
+@media (max-width: 100ch) {
+	div {
+		-webkit-columns: 1;
+		   -moz-columns: 1;
+		        columns: 1;
+	}
+}

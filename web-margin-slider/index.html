@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Slide you favorite margins and ratios</title>
+	<link rel="stylesheet" href="css.css">
+</head>
+<body>
+	<div>
+		<h1>An old margin slider</h1>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+		<p>This tool lets you set the margins for your website layout according to the classic layouts used in paper books. It's based on the theory explained in Jan Tschicholds essays. And it looks good. It can be a good starting point.</p>
+	</div>
+	<aside>
+		<article>
+			<h2>Header</h2>
+			<ul>
+				<li>Mostly useless</li>
+				<li>Lists of links</li>
+				<li>And other</li>
+				<li>Slightly related</li>
+				<li>Pieces of</li>
+				<li>Content</li>
+			</ul>
+		</article>
+		<article>
+			<h2>Header</h2>
+			<ul>
+				<li>Mostly useless</li>
+				<li>Lists of links</li>
+				<li>And other</li>
+				<li>Slightly related</li>
+				<li>Pieces of</li>
+				<li>Content</li>
+			</ul>
+		</article>
+		<article>
+			<h2>Header</h2>
+			<ul>
+				<li>Mostly useless</li>
+				<li>Lists of links</li>
+				<li>And other</li>
+				<li>Slightly related</li>
+				<li>Pieces of</li>
+				<li>Content</li>
+			</ul>
+		</article>
+	</aside>
+
+	<form>
+	<fieldset>
+		<legend>Tools</legend>
+		<label>
+			Margin: 
+			<input type="range" step="0.01" min="0" max="22" value="11">
+		</label>
+		<label>
+			Ratio: 
+			<input type="range" step="0.01" min="25" max="75" value="11">
+		</label>
+		<label>
+			<input type="checkbox" id="background" checked="">
+			Background
+		</label>
+	</fieldset>
+</form>
+
+<script>
+
+var range = document.querySelectorAll('[type=range]');
+var checkbo = document.getElementById('background');
+var val = 11;
+var ratio = 50;
+var div = document.querySelector('div');
+var aside = document.querySelector('aside');
+
+range[0].oninput = function() {
+	val = range[0].value;
+	document.body.style.margin = val+'vh '+ val + 'vw ' + val*2 + 'vh';
+	setDivs();
+}
+range[1].oninput = function() {
+	ratio = range[1].value;
+	setDivs();
+}
+checkbo.onchange = function() {
+	document.body.style.backgroundImage = 'url(../complete-octavoformat.svg)';
+	document.body.style.backgroundColor = 'hsl(0,0%,98%)';
+	if(this.checked == false) {
+		document.body.style.backgroundImage = 'url()';
+		document.body.style.backgroundColor = 'white';
+	}
+	
+}
+
+function setDivs() {
+	div.style.width = 'calc('+ratio+'% - '+val/2+'vw)';
+	div.style.marginRight = val/2+'vw';
+	aside.style.width = 'calc('+(100 - ratio)+'% - '+val/2+'vw)';
+	aside.style.marginLeft = val/2+'vw';
+}
+
+</script>
+</body>
+</html>

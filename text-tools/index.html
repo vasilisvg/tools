@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="/css.css">
+</head>
+<body>
+
+<main>
+	
+    	<h1 data-long="Paper sizes on the web for people who only like perfect canvas sizes" data-short="Paper sizes">Paper sizes on the web</h1>
+<p>According to Bringhurst there are a few ratios that look fantastic. These ratios have been used for ages for things like sheets of paper and books, but you can also find them in architecture, paintings, sculptures and in nature. And even in music. These ratios look pleasant, they sound good, and they make sense in a mathematical way, so we should probably use them. So I wondered, can we create and use them on the web?</p>
+<p><span id="more-1188"></span></p>
+<h2 data-long="Yes, of course we can do things like that, among many others" data-short="Yes, we can">Yes, we can</h2>
+<p>We can create a canvas within our viewport that has one of these ratios. It’s really not that hard to do. For instance, if the ratio of the viewport is more than 1/1 (wider than the height) we can force the body to be <code>100vh</code>, which is exactly as wide as the height of the viewport. Our content is now laid out on a square canvas, and you can pick the ideal page margins for this kind of canvas if you like. The page now looks like this</p>
+<p>If the ratio of the viewport is bigger than 3/4, but smaller than 1/1 we can create a nice looking canvas by making the width of the body <code>75vh</code>, which is 75% of the height of the viewport. Looks good, right?</p>
+<p>You get the point. If you read this on a browser you can resize freely, here’s <a href="http://nerd.vasilis.nl/code/bringhurst-studies/chromatic-scale/">a working example of this idea</a>. In this example I only use the ratios 1/2, 2/3, 3/4, 1/1, 4/3, 3/2 and 2/1. But there are many more <q>perfect</q> ratios.</p>
+<h3 data-long="There are many more ratios though, that can all be considered to be almost perfect" data-short="More ratios">More ratios</h3>
+<p>Here’s <a href="http://nerd.vasilis.nl/code/bringhurst-studies/chromatic-scale/complete.html">a working example with all the so called <em>chromatic ratios</em></a> Bringhurst describes on page 146 of the fourth edition of <cite>The Elements of Typographic Style</cite>. When you resize this page you’ll notice that most of the time there’s not much of the purple background visible. There are so many <q>perfect</q> ratios, you might wonder if there are any rectangles that are not perfect? <em>Any</em> rectangle with <em>any</em> ratio approximates one of the perfect ratios. And here’s an example with <a href="http://nerd.vasilis.nl/code/bringhurst-studies/all-ratios/">all the ratios that can be created with a square, a pentagon, a hexagon or an octagon</a>.</p>
+<h2 data-long="Now the question we all have is, does this make any sense at all?" data-short="What for?">Does this make sense?</h2>
+<p>If you only like a few ratios, this idea of creating fake, but ideal canvasses within the viewport makes sense. But if you can’t really choose, and you like all <q>perfect</q> ratios, you can just as well not bother and simply use the whole viewport as your canvas. It’s much, much easier to work with, and it looks <em>almost</em> perfect on any screen. And since we’d like to go home early instead of debugging an insanely complex layout system, I’d advice you to ignore this whole post.</p>
+</main>
+
+<form>
+	<fieldset>
+		<legend>Base font</legend>
+		<label>Font 
+			<select title="Pick a font" id="pickafont" data-tag="html" class="pickafont">
+				<option>Georgia</option>
+				<option>Helvetica</option>
+				<option>Arial</option>
+				<option>Times New Roman</option>
+				<option>Lucida Grande</option>
+				<option>Verdana</option>
+			</select>
+		</label>
+		<label>The measure <input type="range" id="measure" value="30" min="15" max="50" step=".25" /><output id="measureSize"></output></label>
+		
+		<label>The line-height <input type="range" id="lineheight" value="1.5" min="0.8" max="3" step=".01" data-tag="html" class="setLineheight"><output id="lineheightSize"></output></label>
+		
+		<label>Base font-size<input type="range" id="fontsize" value="1" min="0.8" max="3" step=".01" /><output id="fontsizeSize"></output></label>
+		
+	</fieldset>
+	<fieldset>
+		<legend>Headings</legend>
+		<label>Ratio
+			<select id="headingratio">
+            	<option value="1.067">1.067 — Minor Second</option>
+				<option value="1.125">1.125 — Major Second</option>
+				<option value="1.200">1.200 — Minor Third</option>
+				<option value="1.250">1.250 — Major Third</option>
+				<option value="1.333">1.333 — Perfect Fourth</option>
+				<option selected value="1.414">1.414 — Augmented Fourth</option>
+				<option value="1.500">1.500 — Perfect Fifth</option>
+				<option value="1.618">1.618 — Golden Ratio</option>
+            </select>
+		</label>
+		<label>Font 
+			<select title="Pick a font" id="heading1font" data-tag="h1,h2,h3,h4" class="pickafont">
+				<option></option>
+				<option>Georgia</option>
+				<option>Helvetica</option>
+				<option>Arial</option>
+				<option>Times New Roman</option>
+				<option>Lucida Grande</option>
+				<option>Verdana</option>
+			</select>
+		</label>
+		<label>
+			<input type="checkbox" id="longHeadings"> Long headings
+		</label>
+		<label>
+			<input type="checkbox" id="indiMeasure"> Individual measures
+		</label>
+
+		<label>The line-height <input type="range" id="headingLineheight" value="1.5" min="0.4" max="2" step=".01" data-tag="h1,h2,h3,h4" class="setLineheight"><output id="headingLineheightSize"></output></label>
+
+		<fieldset>
+			<legend>Individual headings</legend>
+			<fieldset>
+				<legend>Styles for heading 1</legend>
+				<label>Font 
+					<select title="Pick a font" id="heading1font" data-tag="h1" class="pickafont">
+						<option></option>
+						<option>Georgia</option>
+						<option>Helvetica</option>
+						<option>Arial</option>
+						<option>Times New Roman</option>
+						<option>Lucida Grande</option>
+						<option>Verdana</option>
+					</select>
+				</label>
+			</fieldset>
+		</fieldset>
+	</fieldset>
+</form>
+
+<script src="js.js"></script>
+
+</body>
+</html>
