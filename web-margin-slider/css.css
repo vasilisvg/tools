@@ -11,11 +11,7 @@ body {
     background-attachment: fixed;
     background-position: 0 0;
 }
-form {
-	position: fixed;
-	left: 0;
-	top: 0;
-}
+
 h1,
 h2 {
 	margin: 0 0 1em;
@@ -34,13 +30,19 @@ aside article {
 	background: #ebebeb;
 }
 div p {
-	text-align: justify;
+	-webkit-hyphens: auto;
+	   -moz-hyphens: auto;
+	    -ms-hyphens: auto;
+	        hyphens: auto;
 }
 
-@media (max-width: 100ch) {
-	div {
-		-webkit-columns: 1;
-		   -moz-columns: 1;
-		        columns: 1;
-	}
+#tools {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background: white;
 }
+label {
+	display: block;
+}
+
