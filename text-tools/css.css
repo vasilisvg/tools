@@ -1,42 +1,150 @@
-form {
+html {
+	font: 1em/1.5 Georgia, serif;
+}
+
+
+h1, h2, h3, h4 {
+	line-height: ;
+}
+
+h1 {
+	font-size: 2.0736em;
+}
+
+h2 {
+	font-size: 1.7280em;
+}
+
+h3 {
+	font-size: 1.4400em;
+}
+
+h4 {
+	font-size: 1.2000em;
+}
+
+#toolset {
 	position: fixed;
 	top: 0;
 	right: 0;
 	background: white;
 	height: 100vh;
-	overflow-y: scroll; 
+	overflow-y: scroll;
+	font-family: "Irma Text Narrow";
+	font-style: Normal;
+	font-weight: 400;
+	font-stretch: normal;
+	margin: 0;
+	padding: 0;
+	line-height: 1.25;
 }
-form, select, input {
-	font-size: 1em !important;
-	font-family: helvetica !important;
-	font-size: 16px !important;
-	line-height: 1.5 !important;
+#toolset, #toolset select, #toolset input {
+	font-size: 14.4px !important;
+	font-family: "Irma Text Narrow";
+	font-style: Normal;
+	font-weight: 400;
+	font-stretch: normal;
 }
-input:focus, select:focus {
+#toolset input:focus, #toolset select:focus {
 	box-shadow: 0 0 .2em .2em hsla(150,50%,40%,.5)
 }
-.pefect input:focus, .pefect select:focus {
+#toolset .pefect input:focus, #toolset .pefect select:focus {
 	box-shadow: 0 0 .2em .2em hsla(90,50%,50%,.5)
 }
-.alert input:focus, .alert select:focus {
+#toolset .alert input:focus, #toolset .alert select:focus {
 	box-shadow: 0 0 .2em .2em hsla(0,50%,50%,.5)
 }
-label {
+#toolset label {
 	display: block;
 	border-bottom: 1px solid #ebebeb;
 	margin: 0 0 .3em;
-	padding: 0 0 .3em;
+	padding: .2em .2em .5em;
 }
-label input,
-label select {
+#toolset label:last-child {
+	border-bottom: 0;
+	padding-bottom: 0;
+}
+#toolset label input,
+#toolset label select {
 	display: block;
 }
-label input[type="checkbox"] {
+#toolset label input[type="checkbox"],
+#toolset label input[type="radio"] {
 	display: inline-block;
 }
-.alert output {
-	color: red
+#toolset label span {
+	display: flex; 
 }
-.pefect output {
+#toolset output {
+	width: 4em;
+	text-align: right;
+}
+#toolset .alert output {
+	color: red;
+}
+#toolset .pefect output {
 	color: green;
+}
+
+#toolset legend {
+	font-weight: 900;
+  	font-style: normal;
+  	background: white;
+  	line-height: 1;
+  	color: black;
+
+}
+#toolset legend::before {
+	content: "";
+	display: block;
+	position: absolute;
+	border-top: 1px solid red;
+	left: .5em;
+	width: .6em;
+	margin-top: .45em;
+}
+#toolset legend::after {
+	content: "";
+	display: block;
+	position: absolute;
+	border-top: 1px solid red;
+	left: .5em;
+	right: .5em;
+	top: 1em;
+	z-index: 0;
+	margin-top: .45em;
+}
+#toolset fieldset fieldset legend {
+	font-weight: 700;
+}
+#toolset fieldset fieldset fieldset legend {
+	font-style: italic;
+}
+#toolset fieldset {
+	padding: .5em;
+	margin: 1em .5em;
+}
+#toolset fieldset fieldset {
+	margin: .5em -.5em -.5em;
+}
+
+pre {
+	//position: absolute;
+	top: 0;
+	background: white;
+	-moz-tab-size: 4;
+	  -o-tab-size: 4;
+	     tab-size: 4;
+}
+pre > span {
+	display: block;
+}
+pre span:empty {
+	display: none;
+}
+pre span span + span {
+	display: block;
+}
+pre span span + span::before {
+	content: '	';
 }

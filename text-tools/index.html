@@ -3,8 +3,19 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-	<link rel="stylesheet" href="/css.css">
+	<title>Web design</title>
+	<link rel="stylesheet" href="http://fonts.typotheque.com/WF-023273-007784.css">
+	<link rel="stylesheet" href="css.css">
+	<style id="theStyle">
+html{}
+h1, h2, h3, h4 {}
+h1, h2, h3, h4, p {}
+h1 {}
+h2 {}
+h3 {}
+h4 {}
+p {}
+	</style>
 </head>
 <body>
 
@@ -23,43 +34,50 @@
 <p>If you only like a few ratios, this idea of creating fake, but ideal canvasses within the viewport makes sense. But if you can’t really choose, and you like all <q>perfect</q> ratios, you can just as well not bother and simply use the whole viewport as your canvas. It’s much, much easier to work with, and it looks <em>almost</em> perfect on any screen. And since we’d like to go home early instead of debugging an insanely complex layout system, I’d advice you to ignore this whole post.</p>
 </main>
 
-<form>
+<form id="toolset">
+	<fieldset><legend>Hallo</legend></fieldset>
 	<fieldset>
 		<legend>Base font</legend>
 		<label>Font 
-			<select title="Pick a font" id="pickafont" data-tag="html" class="pickafont">
-				<option>Georgia</option>
-				<option>Helvetica</option>
-				<option>Arial</option>
-				<option>Times New Roman</option>
-				<option>Lucida Grande</option>
-				<option>Verdana</option>
+			<select title="Pick a font" id="pickafont" data-property="font-family" data-tag="html">
+				<option style="font-family:georgia;">Georgia</option>
+				<option style="font-family:helvetica;">Helvetica</option>
+				<option style="font-family:arial;">Arial</option>
+				<option style="font-family:times new roman;">Times New Roman</option>
+				<option style="font-family:lucida grande;">Lucida Grande</option>
+				<option style="font-family:verdana;">Verdana</option>
 			</select>
 		</label>
-		<label>The measure <input type="range" id="measure" value="30" min="15" max="50" step=".25" /><output id="measureSize"></output></label>
+		<label>The measure 
+			<span>
+				<input type="range" data-property="max-width" data-unit="em" data-tag="h1, h2, h3, h4, p" data-min="20" data-max="40" data-ideal="30" value="30" min="15" max="50" step="0.25" />
+				<output id="measureSize"></output>
+			</span>
+		</label>
 		
-		<label>The line-height <input type="range" id="lineheight" value="1.5" min="0.8" max="3" step=".01" data-tag="html" class="setLineheight"><output id="lineheightSize"></output></label>
+		<label>The line-height <span><input type="range" data-property="line-height" data-tag="html" data-min="1" data-max="2" value="1.5" min="0.8" max="3" step="0.01"><output id="lineheightSize"></output></span></label>
 		
-		<label>Base font-size<input type="range" id="fontsize" value="1" min="0.8" max="3" step=".01" /><output id="fontsizeSize"></output></label>
+		<label>Base font-size <span><input type="range" data-property="font-size" data-unit="em" data-tag="html" data-min="1" data-max="40" data-ideal="1.1" value="1" min="0.8" max="3" step="0.01" /><output id="fontsizeSize"></output></span></label>
 		
 	</fieldset>
 	<fieldset>
 		<legend>Headings</legend>
 		<label>Ratio
 			<select id="headingratio">
-            	<option value="1.067">1.067 — Minor Second</option>
-				<option value="1.125">1.125 — Major Second</option>
-				<option value="1.200">1.200 — Minor Third</option>
-				<option value="1.250">1.250 — Major Third</option>
-				<option value="1.333">1.333 — Perfect Fourth</option>
-				<option selected value="1.414">1.414 — Augmented Fourth</option>
-				<option value="1.500">1.500 — Perfect Fifth</option>
-				<option value="1.618">1.618 — Golden Ratio</option>
+            	<option value="1">1</option>
+            	<option value="1.067">1.067</option>
+				<option value="1.125">1.125</option>
+				<option value="1.200">1.200</option>
+				<option value="1.250">1.250</option>
+				<option value="1.333">1.333</option>
+				<option selected value="1.414">1.414</option>
+				<option value="1.500">1.500</option>
+				<option value="1.618">1.618</option>
             </select>
 		</label>
 		<label>Font 
-			<select title="Pick a font" id="heading1font" data-tag="h1,h2,h3,h4" class="pickafont">
-				<option></option>
+			<select title="Pick a font" id="headingfont" data-tag="h1, h2, h3, h4" data-property="font-family" class="pickafont">
+				<option>-</option>
 				<option>Georgia</option>
 				<option>Helvetica</option>
 				<option>Arial</option>
@@ -75,15 +93,13 @@
 			<input type="checkbox" id="indiMeasure"> Individual measures
 		</label>
 
-		<label>The line-height <input type="range" id="headingLineheight" value="1.5" min="0.4" max="2" step=".01" data-tag="h1,h2,h3,h4" class="setLineheight"><output id="headingLineheightSize"></output></label>
-
 		<fieldset>
 			<legend>Individual headings</legend>
 			<fieldset>
 				<legend>Styles for heading 1</legend>
 				<label>Font 
-					<select title="Pick a font" id="heading1font" data-tag="h1" class="pickafont">
-						<option></option>
+					<select title="Pick a font" id="heading1font" data-tag="h1" data-property="font-family" class="pickafont">
+						<option>-</option>
 						<option>Georgia</option>
 						<option>Helvetica</option>
 						<option>Arial</option>
@@ -92,10 +108,70 @@
 						<option>Verdana</option>
 					</select>
 				</label>
+				<label>The line-height <input type="range" data-property="line-height" value="1.5" min="0.4" max="2" step="0.01" data-tag="h1" class="setLineheight"><output id="headingLineheightSize"></output></label>
+				<label>
+					<input type="checkbox" data-property="font-weight" value="bold" data-tag="h1" checked> Bold
+				</label>
+				<label>
+					<input type="checkbox" data-property="font-style" value="italic" data-tag="h1"> Italic
+				</label>
+				<label>
+					<input type="checkbox" data-property="font-variant" value="small-caps" data-tag="h1"> Small caps
+				</label>
+				<p>Text-transform</p>
+				<label>
+					<input type="radio" name="headingsTextTransform" data-tag="h1" value="uppercase"> Uppercase
+				</label>
+				<label>
+					<input type="radio" name="headingsTextTransform" data-tag="h1" value="lowercase"> Lowercase
+				</label>
+				<label>
+					<input type="radio" name="headingsTextTransform" data-tag="h1" value="capitalize"> Capitalize
+				</label>
+				<label>
+					<input type="radio" name="headingsTextTransform" data-tag="h1" value="none" checked> None
+				</label>
+				
 			</fieldset>
 		</fieldset>
 	</fieldset>
 </form>
+
+<pre id="output">
+<span id="o-html">
+html {
+	font: <span class="font-size">1em</span>/<span class="line-height">1.62</span> <span class="font-family">georgia, sans-serif</span>;
+}
+</span><span id="o-main">
+main {
+	<span class="max-width">max-width: 30em;</span>
+}
+</span><span id="o-h1-h2-h3-h4-p">
+h1, h2, h3, h4, p {
+	<span class="max-width">max-width: 30em;</span>
+}
+</span><span id="o-h1-h2-h3-h4">
+h1, h2, h3, h4 {
+	<span class="font-family"></span>
+}
+</span><span id="o-h1">
+h1 {
+	<span class="font-size">font-size: 1em;</span><span class="font-family"></span><span class="line-height">line-height: </span>;<span class="font-weight">font-weight: </span>;
+}
+</span><span id="o-h2">
+h2 {
+	<span class="font-size">font-size: 1em;</span><span class="font-family"></span>
+}
+</span><span id="o-h3">
+h3 {
+	<span class="font-size">font-size: 1em;</span><span class="font-family"></span>
+}
+</span><span id="o-h4">
+h4 {
+	<span class="font-size">font-size: 1em;</span><span class="font-family"></span>
+}
+</span>
+</pre>
 
 <script src="js.js"></script>
 
