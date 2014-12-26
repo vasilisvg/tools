@@ -99,6 +99,9 @@ function showStyle(el) {
 	if (el.type == 'range') {
 		showOutput(el);
 	}
+	if (el.type == 'checkbox') {
+		pvalue = isChecked(el);
+	}
 	if (unit == null) {
 		unit = '';
 	}
@@ -171,30 +174,15 @@ function showOutput(el) {
 	}
 }
 
-// Set the line-height of the body copy
-function setLineheight(el) {
-	
-	// Show the line-height in the output
-	el.parentNode.querySelector('output').value = el.value;
-
-	// Make the output green if the value is somehow "perfect"
-	if(el.value === 1.06 || el.value == 1.12 || el.value == 1.2 || el.value == 1.25 || el.value == 1.33 || el.value == 1.41 || el.value == 1.5 || el.value == 1.62 ) {
-		el.parentNode.classList.add('pefect');
+function isChecked(el) {
+	if (el.checked == true) {
+		pvalue = el.value;
 	}
 	else {
-		el.parentNode.classList.remove('pefect');
+		pvalue = 'normal';
 	}
+	return pvalue;
 }
 
-// Set the font-size of the body copy
-function setFontsize(el) {
-	// Set the font-size
-	el.parentNode.querySelector('output').value = el.value + 'em';
-	// If the size is smaller than 1em, make it red
-	if (el.value < 1) {
-		el.parentNode.classList.add('alert');
-	}
-	else {
-		el.parentNode.classList.remove('alert');
-	}
-}
+
+
