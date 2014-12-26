@@ -39,13 +39,13 @@ p {}
 	<fieldset>
 		<legend>Base font</legend>
 		<label>Font 
-			<select title="Pick a font" id="pickafont" data-property="font-family" data-tag="html">
-				<option style="font-family:georgia;">Georgia</option>
-				<option style="font-family:helvetica;">Helvetica</option>
-				<option style="font-family:arial;">Arial</option>
-				<option style="font-family:times new roman;">Times New Roman</option>
-				<option style="font-family:lucida grande;">Lucida Grande</option>
-				<option style="font-family:verdana;">Verdana</option>
+			<select data-property="font-family" data-tag="html">
+				<option value="georgia, serif" style="font-family:georgia;">Georgia</option>
+				<option value="helvetica, sans-serif" style="font-family:helvetica;">Helvetica</option>
+				<option value="arial, sans-serif" style="font-family:arial;">Arial</option>
+				<option value="times new roman, serif" style="font-family:times new roman;">Times New Roman</option>
+				<option value="lucida grande, sans-serif" style="font-family:lucida grande;">Lucida Grande</option>
+				<option value="verdana, sans-serif" style="font-family:verdana;">Verdana</option>
 			</select>
 		</label>
 		<label>The measure 
@@ -76,14 +76,14 @@ p {}
             </select>
 		</label>
 		<label>Font 
-			<select title="Pick a font" id="headingfont" data-tag="h1, h2, h3, h4" data-property="font-family" class="pickafont">
+			<select data-tag="h1, h2, h3, h4" data-property="font-family">
 				<option>-</option>
-				<option>Georgia</option>
-				<option>Helvetica</option>
-				<option>Arial</option>
-				<option>Times New Roman</option>
-				<option>Lucida Grande</option>
-				<option>Verdana</option>
+				<option value="georgia, serif" style="font-family:georgia;">Georgia</option>
+				<option value="helvetica, sans-serif" style="font-family:helvetica;">Helvetica</option>
+				<option value="arial, sans-serif" style="font-family:arial;">Arial</option>
+				<option value="times new roman, serif" style="font-family:times new roman;">Times New Roman</option>
+				<option value="lucida grande, sans-serif" style="font-family:lucida grande;">Lucida Grande</option>
+				<option value="verdana, sans-serif" style="font-family:verdana;">Verdana</option>
 			</select>
 		</label>
 		<label>
@@ -98,17 +98,17 @@ p {}
 			<fieldset>
 				<legend>Styles for heading 1</legend>
 				<label>Font 
-					<select title="Pick a font" id="heading1font" data-tag="h1" data-property="font-family" class="pickafont">
+					<select data-tag="h1" data-property="font-family">
 						<option>-</option>
-						<option>Georgia</option>
-						<option>Helvetica</option>
-						<option>Arial</option>
-						<option>Times New Roman</option>
-						<option>Lucida Grande</option>
-						<option>Verdana</option>
+						<option value="georgia, serif" style="font-family:georgia;">Georgia</option>
+						<option value="helvetica, sans-serif" style="font-family:helvetica;">Helvetica</option>
+						<option value="arial, sans-serif" style="font-family:arial;">Arial</option>
+						<option value="times new roman, serif" style="font-family:times new roman;">Times New Roman</option>
+						<option value="lucida grande, sans-serif" style="font-family:lucida grande;">Lucida Grande</option>
+						<option value="verdana, sans-serif" style="font-family:verdana;">Verdana</option>
 					</select>
 				</label>
-				<label>The line-height <input type="range" data-property="line-height" value="1.5" min="0.4" max="2" step="0.01" data-tag="h1" class="setLineheight"><output id="headingLineheightSize"></output></label>
+				<label>The line-height <input type="range" data-property="line-height" data-min="0.7" data-max="5" value="1.5" min="0.4" max="2" step="0.01" data-tag="h1"><output id="headingLineheightSize"></output></label>
 				<label>
 					<input type="checkbox" data-property="font-weight" value="bold" data-tag="h1" checked> Bold
 				</label>
@@ -120,16 +120,55 @@ p {}
 				</label>
 				<p>Text-transform</p>
 				<label>
-					<input type="radio" name="headingsTextTransform" data-tag="h1" value="uppercase"> Uppercase
+					<input type="radio" name="text-transform" data-property="text-transform" data-tag="h1" value="uppercase"> Uppercase
 				</label>
 				<label>
-					<input type="radio" name="headingsTextTransform" data-tag="h1" value="lowercase"> Lowercase
+					<input type="radio" name="text-transform" data-property="text-transform" data-tag="h1" value="lowercase"> Lowercase
 				</label>
 				<label>
-					<input type="radio" name="headingsTextTransform" data-tag="h1" value="capitalize"> Capitalize
+					<input type="radio" name="text-transform" data-property="text-transform" data-tag="h1" value="capitalize"> Capitalize
 				</label>
 				<label>
-					<input type="radio" name="headingsTextTransform" data-tag="h1" value="none" checked> None
+					<input type="radio" name="text-transform" data-property="text-transform" data-tag="h1" value="none" checked> None
+				</label>
+				
+			</fieldset>
+
+			<fieldset>
+				<legend>Styles for heading 2</legend>
+				<label>Font 
+					<select data-tag="h2" data-property="font-family">
+						<option>-</option>
+						<option value="georgia, serif" style="font-family:georgia;">Georgia</option>
+						<option value="helvetica, sans-serif" style="font-family:helvetica;">Helvetica</option>
+						<option value="arial, sans-serif" style="font-family:arial;">Arial</option>
+						<option value="times new roman, serif" style="font-family:times new roman;">Times New Roman</option>
+						<option value="lucida grande, sans-serif" style="font-family:lucida grande;">Lucida Grande</option>
+						<option value="verdana, sans-serif" style="font-family:verdana;">Verdana</option>
+					</select>
+				</label>
+				<label>The line-height <input type="range" data-property="line-height" data-min="0.7" data-max="5" value="1.5" min="0.4" max="2" step="0.01" data-tag="h2"><output id="headingLineheightSize"></output></label>
+				<label>
+					<input type="checkbox" data-property="font-weight" value="bold" data-tag="h2" checked> Bold
+				</label>
+				<label>
+					<input type="checkbox" data-property="font-style" value="italic" data-tag="h2"> Italic
+				</label>
+				<label>
+					<input type="checkbox" data-property="font-variant" value="small-caps" data-tag="h2"> Small caps
+				</label>
+				<p>Text-transform</p>
+				<label>
+					<input type="radio" name="text-transform" data-property="text-transform" data-tag="h2" value="uppercase"> Uppercase
+				</label>
+				<label>
+					<input type="radio" name="text-transform" data-property="text-transform" data-tag="h2" value="lowercase"> Lowercase
+				</label>
+				<label>
+					<input type="radio" name="text-transform" data-property="text-transform" data-tag="h2" value="capitalize"> Capitalize
+				</label>
+				<label>
+					<input type="radio" name="text-transform" data-property="text-transform" data-tag="h2" value="none" checked> None
 				</label>
 				
 			</fieldset>
