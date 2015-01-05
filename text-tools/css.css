@@ -1,5 +1,6 @@
 html {
 	font: 1em/1.5 Georgia, serif;
+	background: silver;
 }
 
 
@@ -9,6 +10,7 @@ h1, h2, h3, h4 {
 
 h1 {
 	font-size: 2.0736em;
+	margin-top: 0;
 }
 
 h2 {
@@ -22,8 +24,28 @@ h3 {
 h4 {
 	font-size: 1.2000em;
 }
+body {
+	margin: 0 320px 0 0;
+	padding: 0;
+	background: white;
 
+}
+body > div {
+	overflow: hidden;
+}
+main {
+	padding: 0;
+	position: relative;
+	transition: box-shadow .3s;
+	overflow: hidden;
+}
+
+main.active {
+	box-shadow: 0 0 0 1px hsla(0,100%,50%,.2);
+	transition: box-shadow 0;
+}
 #toolset {
+	width: 310px;
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -37,6 +59,7 @@ h4 {
 	margin: 0;
 	padding: 0;
 	line-height: 1.25;
+	color: black !important;
 }
 #toolset, #toolset select, #toolset input {
 	font-size: 14.4px !important;
@@ -74,6 +97,40 @@ h4 {
 }
 #toolset label span {
 	display: flex; 
+	clear: right;
+}
+
+#toolset label a {
+	float: right;
+	font-size: .8em;
+	color: blue;
+}
+#toolset label a span {
+	display: inline-block;
+	opacity: 0;
+	position: absolute;
+}
+#toolset label a:hover span:first-child {
+	position: relative;
+	opacity: 1;
+	margin-right: -.5em;
+	background: white;
+	z-index: 2;
+	border: 1px solid;
+	border-width: 1px 0 1px 1px;
+	padding: 0 0 0 .3em;
+	transition: opacity .25s;
+}
+#toolset label a span + span {
+	position: static;
+	opacity: 1;
+	border: 1px solid;
+	border-radius: 100%;
+	width: 1.5em;
+	height: 1.35em;
+	text-align: center;
+	padding: .15em 0 0;
+	margin-right: 0;
 }
 #toolset output {
 	width: 4em;
@@ -87,45 +144,114 @@ h4 {
 }
 
 #toolset legend {
-	font-weight: 900;
+	font-weight: 700;
   	font-style: normal;
   	background: white;
   	line-height: 1;
-  	color: black;
-
 }
-#toolset legend::before {
-	content: "";
-	display: block;
-	position: absolute;
-	border-top: 1px solid red;
-	left: .5em;
-	width: .6em;
-	margin-top: .45em;
-}
-#toolset legend::after {
-	content: "";
-	display: block;
-	position: absolute;
-	border-top: 1px solid red;
-	left: .5em;
-	right: .5em;
-	top: 1em;
-	z-index: 0;
-	margin-top: .45em;
+#toolset .closed legend {
+	font-style: italic;
 }
 #toolset fieldset fieldset legend {
-	font-weight: 700;
+	font-weight: 500;
 }
 #toolset fieldset fieldset fieldset legend {
 	font-style: italic;
 }
 #toolset fieldset {
-	padding: .5em;
+	padding: .5em .5em .5em 1em;
 	margin: 1em .5em;
+  	color: black;
+  	border: 1px solid;
+  	transition: .3s;
 }
 #toolset fieldset fieldset {
-	margin: .5em -.5em -.5em;
+	margin: .5em -.5em .5em -1em;
+	border-width: 1px 0 0;
+}
+#toolset .closed {
+	padding: 0 .5em 0 1em;
+	border-width: 1px 0 0;
+}
+#toolset .closed > *:not(legend) {
+	max-height: 1px;
+	overflow: hidden;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	opacity: 0;
+	position: absolute;
+}
+#toolset fieldset > legend::before {
+	content: '+';
+	position: absolute;
+	margin-left: calc(-1.1em - 1px);
+	width: 1.1em;
+	text-align: center;
+	opacity: 0;
+	background: white;
+
+}
+#toolset .closed > legend::before {
+	content: '+';
+	position: absolute;
+	opacity: 1;
+	transition: 0s .3s;
+}
+
+#help-section {
+	font-size: 16px !important;
+	position: fixed;
+	border: 0 solid rgba(0,0,0,.5);
+	overflow-y: scroll;
+	z-index: 3;
+	top: 38.8889vh;
+	left: 50vw;
+	right: 50vw;
+	bottom: 61.1111vh;
+	opacity: 0;
+}
+#help-section.is-open {
+	display: block;
+	opacity: 1;
+	transition: .3s;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	right: 0;
+	border-width: 11.1111vh 11.1111vw 22.2222vh;
+}
+#help-section p {
+	max-width: 30em;
+}
+#help-section div {
+	background: white;
+	padding: 5.5555vh 5.5555% 11.1111vh;
+	min-height: 66.6666vh;
+	box-sizing: border-box;
+}
+#help-section h1 {
+	font-size: 1em;
+	min-height: 11vh;
+	font-weight: normal;
+	font-variant: small-caps;
+	text-transform: lowercase;
+	margin-top: 0;
+}
+#help-section h2 {
+	font-size: 1em;
+	margin-top: 5.5555vh;
+	margin-bottom: 0em;
+	font-style: italic;
+	font-weight: normal;
+}
+#help-section ul {
+	margin: 1em 0;
+	padding: 0;
+}
+object h1 {
+	color: red;
 }
 
 pre {
