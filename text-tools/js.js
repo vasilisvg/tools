@@ -259,6 +259,16 @@ function setPageMargin(el) {
 	setTheRules('main:after','border-width', margins ,'');
 }
 
+// JSON
+(function(){
+	microAjax("settings.json", function (res) {
+		var p = JSON.parse(res);
+		console.log(p);
+	});
+})();
+
+
+// help functions
 (function(){
 	var helpLink = document.querySelectorAll('label a');
 	var i = 0;
