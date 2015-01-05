@@ -29,6 +29,23 @@ while(j<triggers.length) {
 			showStyle(el);
 		}
 	}
+	else if (triggers[j].id === 'canon-ratio' || triggers[j].id === 'margin-slider') {
+		triggers[j].onchange = function(){
+			setPageMargin(this);
+		}
+		triggers[j].oninput = function(){
+			setPageMargin(this);
+		}
+		triggers[j].onkeyup = function(){
+			setPageMargin(this);
+		}
+		triggers[j].onfocus = function() {
+			document.querySelector('main').classList.add('active');
+		}
+		triggers[j].onblur = function() {
+			document.querySelector('main').classList.remove('active');
+		}
+	}
 	else {
 		triggers[j].onchange = function(){
 			showStyle(this);
@@ -47,6 +64,13 @@ while(j<triggers.length) {
 	j++;
 }
 
+document.getElementById("toolset").addEventListener("click", function(e) {
+	// e.target is the clicked element!
+	// If it was a list item
+	if(e.target && e.target.nodeName == "LEGEND") {
+		e.target.parentNode.classList.toggle('closed');
+	}
+});
 
 
 
@@ -91,13 +115,17 @@ function showStyle(el) {
 	var property = el.getAttribute('data-property');
 	var pvalue = el.value;
 	var unit = el.getAttribute('data-unit');
+	var hasColour = el.getAttribute('data-colour');
 	if (property === 'max-width') {
 		if (document.getElementById('indiMeasure').checked !== true) {
 			unit = 'rem';
 		}
 	}
-	if (el.type == 'range') {
+	if (el.type == 'range' && hasColour == null) {
 		showOutput(el);
+	}
+	if (hasColour !== null) {
+		pvalue = setColour(el);
 	}
 	if (el.type == 'checkbox') {
 		pvalue = isChecked(el);
@@ -107,7 +135,30 @@ function showStyle(el) {
 	}
 	setTheRules(tag,property,pvalue,unit);
 }
+function setColour(el) {
+	var cName = el.getAttribute('data-name');
+	var cSeries = document.getElementsByTagName('input');
+	var i = 0;
+	while(i < cSeries.length) {
+		if( cSeries[i].getAttribute('data-name') === cName ) {
+			if (cSeries[i].getAttribute('data-colour') === 'hue') {
+				var hue = cSeries[i].value;
+			}
+			if (cSeries[i].getAttribute('data-colour') === 'saturation') {
+				var saturation = cSeries[i].value;
+			}
+			if (cSeries[i].getAttribute('data-colour') === 'lightness') {
+				var lightness = cSeries[i].value;
+			}
+		}
+		i++;
+	}
+	var theColour = 'hsl(' + hue + ', ' + saturation + '%, ' + lightness + '%)';
+	el.parentNode.parentNode.getElementsByTagName('output')[0].value=theColour;
+	return theColour;
+}
 function setTheRules(tag,property,pvalue,unit) {
+	//console.log(tag);
 	var sheet = document.styleSheets[2];
 	var i = 0;
 	var foundit = 0;
@@ -184,5 +235,51 @@ function isChecked(el) {
 	return pvalue;
 }
 
+function setPageMargin(el) {
+	var main = document.querySelector('main');
+	var mRatio = document.getElementById('canon-ratio').value;
+	var mSize = document.getElementById('margin-slider').value;
+	if (mRatio == 1) {
+		mtop = 1;
+		mright = 2;
+		mbottom = 3;
+	}
+	else if (mRatio == 2) {
+		mtop = 1.5;
+		mright = 2;
+		mbottom = 3;
+	}
+	else {
+		mtop = 2;
+		mright = 2;
+		mbottom = 4;
+	}
+	margins = (mtop*mSize) + 'vh '+ (mright*mSize) + '% '+ (mbottom*mSize) + 'vh ';
+	setTheRules('main','margin',margins,'');
+	setTheRules('main:after','border-width', margins ,'');
+}
 
+(function(){
+	var helpLink = document.querySelectorAll('label a');
+	var i = 0;
+	while (i < helpLink.length) {
+		helpLink[i].onclick = function(){
+			showHelp(this.href);
+			return false;
+		}
+		i++;
+	}
+	function showHelp(href) {
+		microAjax(href, function (res) {
+		  var body = res.split('<body>');
+		  var content = body[1].split('</body>');
+		  document.getElementById('help-section').innerHTML = '<div>'+content[0]+'</div>';
+		  document.getElementById('help-section').classList.add('is-open');
+		});
+	}
+	document.getElementById('help-section').onclick = function(){
+		document.getElementById('help-section').classList.remove('is-open');
+	}
+})();
 
+function microAjax(B,A){this.bindFunction=function(E,D){return function(){return E.apply(D,[D])}};this.stateChange=function(D){if(this.request.readyState==4){this.callbackFunction(this.request.responseText)}};this.getRequest=function(){if(window.ActiveXObject){return new ActiveXObject("Microsoft.XMLHTTP")}else{if(window.XMLHttpRequest){return new XMLHttpRequest()}}return false};this.postBody=(arguments[2]||"");this.callbackFunction=A;this.url=B;this.request=this.getRequest();if(this.request){var C=this.request;C.onreadystatechange=this.bindFunction(this.stateChange,this);if(this.postBody!==""){C.open("POST",B,true);C.setRequestHeader("X-Requested-With","XMLHttpRequest");C.setRequestHeader("Content-type","application/x-www-form-urlencoded");C.setRequestHeader("Connection","close")}else{C.open("GET",B,true)}C.send(this.postBody)}};
