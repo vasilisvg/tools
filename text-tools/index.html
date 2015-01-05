@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="css.css">
 	<style id="theStyle">
 html{}
+main{}
+main::after {}
 h1, h2, h3, h4 {}
 h1, h2, h3, h4, p {}
 h1 {}
@@ -18,13 +20,13 @@ p {}
 	</style>
 </head>
 <body>
-
+<div>
 <main>
 	
-    	<h1 data-long="Paper sizes on the web for people who only like perfect canvas sizes" data-short="Paper sizes">Paper sizes on the web</h1>
+    	<h1 data-long="The quick brown fox who jumps over the lazy dog wears pink long handgloves" data-short="Paper handgloves">Paper handgloves on the web</h1>
 <p>According to Bringhurst there are a few ratios that look fantastic. These ratios have been used for ages for things like sheets of paper and books, but you can also find them in architecture, paintings, sculptures and in nature. And even in music. These ratios look pleasant, they sound good, and they make sense in a mathematical way, so we should probably use them. So I wondered, can we create and use them on the web?</p>
 <p><span id="more-1188"></span></p>
-<h2 data-long="Yes, of course we can do things like that, among many others" data-short="Yes, we can">Yes, we can</h2>
+<h2 data-long="The quick brown fox who jumps over the lazy dog wears pink long handgloves" data-short="Yes, we can">Yes, we can</h2>
 <p>We can create a canvas within our viewport that has one of these ratios. It’s really not that hard to do. For instance, if the ratio of the viewport is more than 1/1 (wider than the height) we can force the body to be <code>100vh</code>, which is exactly as wide as the height of the viewport. Our content is now laid out on a square canvas, and you can pick the ideal page margins for this kind of canvas if you like. The page now looks like this</p>
 <p>If the ratio of the viewport is bigger than 3/4, but smaller than 1/1 we can create a nice looking canvas by making the width of the body <code>75vh</code>, which is 75% of the height of the viewport. Looks good, right?</p>
 <p>You get the point. If you read this on a browser you can resize freely, here’s <a href="http://nerd.vasilis.nl/code/bringhurst-studies/chromatic-scale/">a working example of this idea</a>. In this example I only use the ratios 1/2, 2/3, 3/4, 1/1, 4/3, 3/2 and 2/1. But there are many more <q>perfect</q> ratios.</p>
@@ -35,9 +37,25 @@ p {}
 </main>
 
 <form id="toolset">
-	<fieldset><legend>Hallo</legend></fieldset>
-	<fieldset>
-		<legend>Base font</legend>
+	<div>
+	<fieldset class="clo sed">
+		<legend>Margins</legend>
+		<label>Base ratio <a href="explain/base-ratio.html"><span>What’s this</span><span>?</span></a>
+			<select id="canon-ratio">
+				<option value="1">Medieval</option>
+				<option value="2">Tschichold</option>
+				<option value="3" selected>Van de Graaf</option>
+			</select>
+		</label>
+		<label>
+			Size
+			<input type="range" id="margin-slider" data-tag="main" value="11.11" min="0" max="50" step="0.01" />
+		</label>
+		
+		
+	</fieldset>
+	<fieldset class="closed">
+		<legend>Basics</legend>
 		<label>Font 
 			<select data-property="font-family" data-tag="html">
 				<option value="georgia, serif" style="font-family:georgia;">Georgia</option>
@@ -48,20 +66,24 @@ p {}
 				<option value="verdana, sans-serif" style="font-family:verdana;">Verdana</option>
 			</select>
 		</label>
-		<label>The measure 
+		<label>The measure <a href="explain/the-measure.html"><span>What’s this</span><span>?</span></a>
 			<span>
 				<input type="range" data-property="max-width" data-unit="em" data-tag="h1, h2, h3, h4, p" data-min="20" data-max="40" data-ideal="30" value="30" min="15" max="50" step="0.25" />
 				<output id="measureSize"></output>
 			</span>
 		</label>
 		
+		
 		<label>The line-height <span><input type="range" data-property="line-height" data-tag="html" data-min="1" data-max="2" value="1.5" min="0.8" max="3" step="0.01"><output id="lineheightSize"></output></span></label>
 		
 		<label>Base font-size <span><input type="range" data-property="font-size" data-unit="em" data-tag="html" data-min="1" data-max="40" data-ideal="1.1" value="1" min="0.8" max="3" step="0.01" /><output id="fontsizeSize"></output></span></label>
 		
 	</fieldset>
-	<fieldset>
+	<fieldset class="closed">
 		<legend>Headings</legend>
+		<label>
+			<input type="checkbox" id="longHeadings"> Long headings <a href="explain/base-ratio.html"><span>What’s this</span><span>?</span></a>
+		</label>
 		<label>Ratio
 			<select id="headingratio">
             	<option value="1">1</option>
@@ -87,15 +109,12 @@ p {}
 			</select>
 		</label>
 		<label>
-			<input type="checkbox" id="longHeadings"> Long headings
-		</label>
-		<label>
 			<input type="checkbox" id="indiMeasure"> Individual measures
 		</label>
-
-		<fieldset>
+		
+		<fieldset class="closed">
 			<legend>Individual headings</legend>
-			<fieldset>
+			<fieldset class="closed">
 				<legend>Styles for heading 1</legend>
 				<label>Font 
 					<select data-tag="h1" data-property="font-family">
@@ -108,7 +127,10 @@ p {}
 						<option value="verdana, sans-serif" style="font-family:verdana;">Verdana</option>
 					</select>
 				</label>
-				<label>The line-height <input type="range" data-property="line-height" data-min="0.7" data-max="5" value="1.5" min="0.4" max="2" step="0.01" data-tag="h1"><output id="headingLineheightSize"></output></label>
+				<label>The line-height <input type="range" data-property="line-height" data-min="0.7" data-max="5" value="1.5" min="0.4" max="2" step="0.01" data-tag="h1"><output></output></label>
+				<label>Margin-top <input type="range" data-property="margin-top" data-min="0" data-max="5" data-unit="em" value="0" min="0" max="5" step="0.01" data-tag="h1"><output></output></label>
+				<label>Margin-bottom <input type="range" data-property="margin-bottom" data-min="0" data-max="5" data-unit="em" value="1" min="0" max="5" step="0.01" data-tag="h1"><output></output></label>
+				<label>Min-height <input type="range" data-property="min-height" data-min="0" data-max="100" data-unit="vh" value="1" min="0" max="100" step="0.25" data-tag="h1"><output></output></label>
 				<label>
 					<input type="checkbox" data-property="font-weight" value="bold" data-tag="h1" checked> Bold
 				</label>
@@ -134,7 +156,7 @@ p {}
 				
 			</fieldset>
 
-			<fieldset>
+			<fieldset class="closed">
 				<legend>Styles for heading 2</legend>
 				<label>Font 
 					<select data-tag="h2" data-property="font-family">
@@ -148,6 +170,8 @@ p {}
 					</select>
 				</label>
 				<label>The line-height <input type="range" data-property="line-height" data-min="0.7" data-max="5" value="1.5" min="0.4" max="2" step="0.01" data-tag="h2"><output id="headingLineheightSize"></output></label>
+				<label>Margin-top <input type="range" data-property="margin-top" data-min="0" data-max="5" data-unit="em" value="0" min="0" max="5" step="0.01" data-tag="h2"><output></output></label>
+				<label>Margin-bottom <input type="range" data-property="margin-bottom" data-min="0" data-max="5" data-unit="em" value="1" min="0" max="5" step="0.01" data-tag="h2"><output></output></label>
 				<label>
 					<input type="checkbox" data-property="font-weight" value="bold" data-tag="h2" checked> Bold
 				</label>
@@ -174,43 +198,53 @@ p {}
 			</fieldset>
 		</fieldset>
 	</fieldset>
-</form>
+	<fieldset class="closed">
+		<legend>Combinations</legend>
+		<fieldset class="closed">
+			<legend>Heading 1 + paragraph</legend>
+			<label>
+				Font-size <span><input type="range" data-property="font-size" data-unit="em" data-tag="h1 + p" data-min="1" data-max="40" data-ideal="1.1" value="1" min="0.8" max="3" step="0.01" /><output id="fontsizeSize"></output></span>
+			</label>
+		</fieldset>
+	</fieldset>
+	<fieldset class="closed">
+			<legend>Text colour</legend>
+			<label>
+				Hue
+				<input type="range" data-name="body-color" data-colour="hue" data-tag="body" data-property="color" value="0" min="0" max="359" step="1" />
+			</label>
+			<label>
+				Saturation
+				<input type="range" data-name="body-color" data-colour="saturation" data-tag="body" data-property="color" value="50" min="0" max="100" step="0.5" />
+			</label>
+			<label>
+				Lightness
+				<input type="range" data-name="body-color" data-colour="lightness" data-tag="body" data-property="color" value="50" min="0" max="100" step="0.5" />
+			</label>
+			<output data-name="body-color"></output>
+		</fieldset>
 
-<pre id="output">
-<span id="o-html">
-html {
-	font: <span class="font-size">1em</span>/<span class="line-height">1.62</span> <span class="font-family">georgia, sans-serif</span>;
-}
-</span><span id="o-main">
-main {
-	<span class="max-width">max-width: 30em;</span>
-}
-</span><span id="o-h1-h2-h3-h4-p">
-h1, h2, h3, h4, p {
-	<span class="max-width">max-width: 30em;</span>
-}
-</span><span id="o-h1-h2-h3-h4">
-h1, h2, h3, h4 {
-	<span class="font-family"></span>
-}
-</span><span id="o-h1">
-h1 {
-	<span class="font-size">font-size: 1em;</span><span class="font-family"></span><span class="line-height">line-height: </span>;<span class="font-weight">font-weight: </span>;
-}
-</span><span id="o-h2">
-h2 {
-	<span class="font-size">font-size: 1em;</span><span class="font-family"></span>
-}
-</span><span id="o-h3">
-h3 {
-	<span class="font-size">font-size: 1em;</span><span class="font-family"></span>
-}
-</span><span id="o-h4">
-h4 {
-	<span class="font-size">font-size: 1em;</span><span class="font-family"></span>
-}
-</span>
-</pre>
+		<fieldset class="closed">
+			<legend>Background colour</legend>
+			<label>
+				Hue
+				<input type="range" data-name="body-background" data-colour="hue" data-tag="body" data-property="background-color" value="67" min="0" max="359" step="1" />
+			</label>
+			<label>
+				Saturation
+				<input type="range" data-name="body-background" data-colour="saturation" data-tag="body" data-property="background-color" value="50" min="0" max="100" step="0.5" />
+			</label>
+			<label>
+				Lightness
+				<input type="range" data-name="body-background" data-colour="lightness" data-tag="body" data-property="background-color" value="50" min="0" max="100" step="0.5" />
+			</label>
+			<output data-name="body-background"></output>
+		</fieldset>
+	</div>
+</form>
+</div>
+
+<section id="help-section"></section>
 
 <script src="js.js"></script>
 
