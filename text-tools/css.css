@@ -212,6 +212,9 @@ main.active {
 	bottom: 61.1111vh;
 	opacity: 0;
 }
+#help-section * {
+	font-size: inherit !important;
+}
 #help-section.is-open {
 	display: block;
 	opacity: 1;
