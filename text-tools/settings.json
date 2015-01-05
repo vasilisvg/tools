@@ -1,0 +1,56 @@
+{
+	"fieldsets": [
+		{
+			"legend": "Margins",
+			"settings": [
+				{
+					"label": "Base Ratio",
+					"explanation": "explain/base-ratio.html",
+					"id": "canon-ratio",
+					"type": "select",
+					"options": [
+						{
+							"value": "1",
+							"name": "Medieval"
+						},
+						{
+							"value": "2",
+							"name": "Jan Tschichold"
+						},
+						{
+							"value": "3",
+							"name": "Van de Graaf",
+							"selected": true
+						}
+					]
+				},
+				{
+					"label": "Size",
+					"type": "range",
+					"id": "margin-slider",
+					"step": "0.01",
+					"max": "50",
+					"min": "0",
+					"value": "11.11",
+					"data-tag": "main"
+				}
+			]
+		},
+		{
+			"legend": "Basics",
+			"settings": [
+				{
+					"label": "Font"
+				}
+			]
+		},
+		{
+			"legend": "Headings",
+			"settings": [
+				{
+					"label": "Long headings"
+				}
+			]
+		}
+	] 
+}
