@@ -15,26 +15,35 @@
 var theObject = {
   formName : "toolset",
   fields : [
-    { 
+    { // this is a fieldset
     	legend: "Margins",
+    	//hasParent: "the legend of the parent" // optional
     	settings: [
-				{
-					label: "Base Ratio",
-					explanation: "explain/base-ratio.html",
-					type: "select",
+				{ // A select
+					label: "Base Ratio", //*
+					explanation: "explain/base-ratio.html", //*
+					type: "select", // mandatory for a select
 					options: [
 						{
-							value: "1",
-							name: "Medieval"
+							name: "Medieval",
+							attributes: [
+								{value: "1"},
+								//{selected: true},
+								//{style: ""}
+							]
 						},
 						{
-							value: "2",
-							name: "Jan Tschichold"
+							name: "Jan Tschichold",
+							attributes: [
+								{value: "2"}
+							]
 						},
 						{
-							value: "3",
 							name: "Van de Graaf",
-							selected: true
+							attributes: [
+								{value: "3"},
+								{selected: true}
+							]
 						}
 					],
 					attributes: [
@@ -65,39 +74,52 @@ var theObject = {
 					"type": "select",
 					"options": [
 						{
-							"value": "inherit",
 							"name": "-",
-							"style": ""
+							attributes: [
+								{value: "inherit"},
+							]
 						},
 						{
-							"value": "georgia, serif",
 							"name": "Georgia",
-							"style": "font-family: georgia, serif"
+							attributes: [
+								{value: "georgia, serif"},
+								{style: "font-family: georgia, serif"}
+							]
 						},
 						{
-							"value": "helvetica, sans-serif",
 							"name": "Helvetica",
-							"style": "font-family: helvetica, sans-serif"
+							attributes: [
+								{value: "helvetica, sans-serif"},
+								{style: "font-family: helvetica, sans-serif"}
+							]
 						},
 						{
-							"value": "arial, sans-serif",
 							"name": "Arial",
-							"style": "font-family: arial, sans-serif"
+							attributes: [
+								{value: "arial, sans-serif"},
+								{style: "font-family: arial, sans-serif"}
+							]
 						},
 						{
-							"value": "times new roman, serif",
 							"name": "Times New Roman",
-							"style": "font-family: times new roman, serif"
+							attributes: [
+								{value: "times new roman, serif"},
+								{style: "font-family: times new roman, serif"}
+							]
 						},
 						{
-							"value": "lucida grande, sans-serif",
 							"name": "Lucida Grande",
-							"style": "font-family: lucida grande, sans-serif"
+							attributes: [
+								{value: "lucida grande, sans-serif"},
+								{style: "font-family: lucida grande, sans-serif"}
+							]
 						},
 						{
-							"value": "verdana, sans-serif",
 							"name": "Verdana",
-							"style": "font-family: verdana, sans-serif"
+							attributes: [
+								{value: "verdana, sans-serif"},
+								{style: "font-family: verdana, sans-serif"}
+							]
 						}
 					],
 					attributes: [
@@ -209,39 +231,52 @@ var theObject = {
 					"type": "select",
 					"options": [
 						{
-							"value": "inherit",
 							"name": "-",
-							"style": ""
+							attributes: [
+								{value: "inherit"},
+							]
 						},
 						{
-							"value": "georgia, serif",
 							"name": "Georgia",
-							"style": "font-family: georgia, serif"
+							attributes: [
+								{value: "georgia, serif"},
+								{style: "font-family: georgia, serif"}
+							]
 						},
 						{
-							"value": "helvetica, sans-serif",
 							"name": "Helvetica",
-							"style": "font-family: helvetica, sans-serif"
+							attributes: [
+								{value: "helvetica, sans-serif"},
+								{style: "font-family: helvetica, sans-serif"}
+							]
 						},
 						{
-							"value": "arial, sans-serif",
 							"name": "Arial",
-							"style": "font-family: arial, sans-serif"
+							attributes: [
+								{value: "arial, sans-serif"},
+								{style: "font-family: arial, sans-serif"}
+							]
 						},
 						{
-							"value": "times new roman, serif",
 							"name": "Times New Roman",
-							"style": "font-family: times new roman, serif"
+							attributes: [
+								{value: "times new roman, serif"},
+								{style: "font-family: times new roman, serif"}
+							]
 						},
 						{
-							"value": "lucida grande, sans-serif",
 							"name": "Lucida Grande",
-							"style": "font-family: lucida grande, sans-serif"
+							attributes: [
+								{value: "lucida grande, sans-serif"},
+								{style: "font-family: lucida grande, sans-serif"}
+							]
 						},
 						{
-							"value": "verdana, sans-serif",
 							"name": "Verdana",
-							"style": "font-family: verdana, sans-serif"
+							attributes: [
+								{value: "verdana, sans-serif"},
+								{style: "font-family: verdana, sans-serif"}
+							]
 						}
 					],
 					attributes: [
@@ -261,6 +296,8 @@ var theObject = {
 		}// etc
   	]
 }
+
+
 
 
 //show the form and bind events
@@ -294,14 +331,11 @@ window.addEventListener('load', function(event) {
     		setting.options.forEach(function(option){
     			var newOption = document.createElement('option');
     			newOption.innerHTML = option.name;
-    			if (option.value !== undefined) {
-    				newOption.setAttribute('value',option.value);
-    			}
-    			if (option.style !== undefined) {
-    				newOption.setAttribute('style',option.style);
-    			}
-    			if (option.selected !== undefined) {
-    				newOption.setAttribute('selected','');
+    			if(option.attributes !== undefined){
+	    			option.attributes.forEach(function(attribute){
+	    				theKey = Object.keys(attribute);
+						newOption.setAttribute(theKey, attribute[theKey]);
+	    			});
     			}
     			newControl.appendChild(newOption);
     		});
