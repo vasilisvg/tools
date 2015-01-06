@@ -40,7 +40,45 @@
 			"legend": "Basics",
 			"settings": [
 				{
-					"label": "Font"
+					"label": "Font",
+					"type": "select",
+					"options": [
+						{
+							"value": "inherit",
+							"name": "-",
+							"style": ""
+						},
+						{
+							"value": "georgia, serif",
+							"name": "Georgia",
+							"style": "font-family: georgia, serif"
+						},
+						{
+							"value": "helvetica, sans-serif",
+							"name": "Helvetica",
+							"style": "font-family: helvetica, sans-serif"
+						},
+						{
+							"value": "arial, sans-serif",
+							"name": "Arial",
+							"style": "font-family: arial, sans-serif"
+						},
+						{
+							"value": "times new roman, serif",
+							"name": "Times New Roman",
+							"style": "font-family: times new roman, serif"
+						},
+						{
+							"value": "lucida grande, sans-serif",
+							"name": "Lucida Grande",
+							"style": "font-family: lucida grande, sans-serif"
+						},
+						{
+							"value": "verdana, sans-serif",
+							"name": "Verdana",
+							"style": "font-family: verdana, sans-serif"
+						}
+					]
 				}
 			]
 		},

@@ -263,7 +263,15 @@ function setPageMargin(el) {
 (function(){
 	microAjax("settings.json", function (res) {
 		var p = JSON.parse(res);
-		console.log(p);
+		console.log(p.constructor);
+		JSON.parse(res, function (k, v) {
+    		//var bla = (k + ": " + v);
+    		if( k === 'legend') {
+
+    		}
+    		//console.log(bla);
+    		//return v;                  // return the unchanged property value.
+		});
 	});
 })();
 

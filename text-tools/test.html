@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>test</title>
+	
+</head>
+<body>
+	<form id="toolset">
+
+		<button id="save">Save it!</button>
+	</form>
+<script>
+var theObject = {
+  formName : "toolset",
+  fields : [
+    { 
+    	legend: "Margins",
+    	settings: [
+				{
+					label: "Base Ratio",
+					explanation: "explain/base-ratio.html",
+					type: "select",
+					options: [
+						{
+							value: "1",
+							name: "Medieval"
+						},
+						{
+							value: "2",
+							name: "Jan Tschichold"
+						},
+						{
+							value: "3",
+							name: "Van de Graaf",
+							selected: true
+						}
+					],
+					attributes: [
+						{
+							id: "canon-ratio"
+						}
+					]
+				},
+				{
+					label: "Size",
+					attributes: [
+						{type: "range"},
+						{id: "margin-slider"},
+						{step: "0.01"},
+						{max: "50"},
+						{min: "0"},
+						{value: "11.11"},
+						{"data-tag": "main"}
+					]
+				}
+			]
+    	},
+    	{
+			"legend": "Basics",
+			"settings": [
+				{
+					"label": "Font",
+					"type": "select",
+					"options": [
+						{
+							"value": "inherit",
+							"name": "-",
+							"style": ""
+						},
+						{
+							"value": "georgia, serif",
+							"name": "Georgia",
+							"style": "font-family: georgia, serif"
+						},
+						{
+							"value": "helvetica, sans-serif",
+							"name": "Helvetica",
+							"style": "font-family: helvetica, sans-serif"
+						},
+						{
+							"value": "arial, sans-serif",
+							"name": "Arial",
+							"style": "font-family: arial, sans-serif"
+						},
+						{
+							"value": "times new roman, serif",
+							"name": "Times New Roman",
+							"style": "font-family: times new roman, serif"
+						},
+						{
+							"value": "lucida grande, sans-serif",
+							"name": "Lucida Grande",
+							"style": "font-family: lucida grande, sans-serif"
+						},
+						{
+							"value": "verdana, sans-serif",
+							"name": "Verdana",
+							"style": "font-family: verdana, sans-serif"
+						}
+					],
+					attributes: [
+						{"data-property": "font-family"},
+						{"data-tag": "html"}
+					]
+				},
+				{
+					label: "The measure",
+					explanation: "explain/the-measure.html",
+					output: true,
+					attributes: [
+						{type: "range"},
+						{"data-property": "max-width"},
+						{"data-unit": "em"},
+						{"data-tag": "h1, h2, h3, h4, p"},
+						{"data-min": "20"},
+						{"data-max": "40"},
+						{"data-ideal": "30"},
+						{step: "0.25"},
+						{max: "50"},
+						{min: "15"},
+						{value: "30"}
+					]
+				},
+				{
+					label: "The line-height",
+					output: true,
+					attributes: [
+						{type: "range"},
+						{"data-property": "line-height"},
+						{"data-tag": "html"},
+						{"data-min": "1"},
+						{"data-max": "2"},
+						{step: "0.01"},
+						{max: "3"},
+						{min: "0.8"},
+						{value: "1.5"}
+					]
+				},
+				{
+					label: "Base font-size",
+					output: true,
+					attributes: [
+						{type: "range"},
+						{"data-property": "font-size"},
+						{"data-tag": "html"},
+						{"data-unit": "em"},
+						{"data-min": "1"},
+						{"data-max": "40"},
+						{"data-ideal": "1.1"},
+						{step: "0.01"},
+						{max: "2"},
+						{min: "0.8"},
+						{value: "1"}
+					]
+				}
+			]
+		},
+		{
+			"legend": "Headings",
+			"settings": [
+				{
+					"label": "Long headings",
+					attributes: [
+						{type: "checkbox"},
+						{id: "longHeadings"}
+					]
+				},
+				{
+					label: "Ratio",
+					type: "select",
+					options: [
+						{
+							name: "1"
+						},
+						{
+							name: "1.067"
+						},
+						{
+							name: "1.125"
+						},
+						{
+							name: "1.200"
+						},
+						{
+							name: "1.250"
+						},
+						{
+							name: "1.333"
+						},
+						{
+							name: "1.414",
+							selected: true
+						},
+						{
+							name: "1.500"
+						},
+						{
+							name: "1.618"
+						}
+					],
+					attributes: [
+						{id: "headingRatio"}
+					]
+				},
+				{
+					"label": "Font",
+					"type": "select",
+					"options": [
+						{
+							"value": "inherit",
+							"name": "-",
+							"style": ""
+						},
+						{
+							"value": "georgia, serif",
+							"name": "Georgia",
+							"style": "font-family: georgia, serif"
+						},
+						{
+							"value": "helvetica, sans-serif",
+							"name": "Helvetica",
+							"style": "font-family: helvetica, sans-serif"
+						},
+						{
+							"value": "arial, sans-serif",
+							"name": "Arial",
+							"style": "font-family: arial, sans-serif"
+						},
+						{
+							"value": "times new roman, serif",
+							"name": "Times New Roman",
+							"style": "font-family: times new roman, serif"
+						},
+						{
+							"value": "lucida grande, sans-serif",
+							"name": "Lucida Grande",
+							"style": "font-family: lucida grande, sans-serif"
+						},
+						{
+							"value": "verdana, sans-serif",
+							"name": "Verdana",
+							"style": "font-family: verdana, sans-serif"
+						}
+					],
+					attributes: [
+						{"data-property": "font-family"},
+						{"data-tag": "h1, h2, h3, h4"}
+					]
+				},
+				{
+					label: "Individual measures",
+					explanation: "explain/individual-measures.html",
+					attributes: [
+						{type: "checkbox"},
+						{id: "indiMeasure"}
+					]
+				}
+			]
+		}// etc
+  	]
+}
+
+
+//show the form and bind events
+window.addEventListener('load', function(event) {
+  
+  var toolset = document.getElementById(theObject.formName);
+  var theButton = document.getElementById("save");
+  
+  //create the fields
+  theObject.fields.forEach(function(field) {
+    var fieldContainer = document.createElement("fieldset");
+    var newLegend = document.createElement("legend");
+        newLegend.innerHTML = field.legend;
+    fieldContainer.appendChild(newLegend);
+
+    // Write each setting
+    field.settings.forEach(function(setting){
+    	console.log(setting);
+    	var newLabel = document.createElement("label");
+    		newLabel.innerHTML = setting.label;
+    		fieldContainer.appendChild(newLabel);
+    	if (setting.explanation !== undefined) {
+    		var newLink = document.createElement("a");
+    		newLink.innerHTML = '<span>What’s this</span><span>?</span>';
+    		newLink.href = setting.explanation;
+    		newLabel.appendChild(newLink);
+    	}
+    	// If it's a select, it's a select
+    	if (setting.type === 'select') {
+    		var newControl = document.createElement("select");
+    		setting.options.forEach(function(option){
+    			var newOption = document.createElement('option');
+    			newOption.innerHTML = option.name;
+    			if (option.value !== undefined) {
+    				newOption.setAttribute('value',option.value);
+    			}
+    			if (option.style !== undefined) {
+    				newOption.setAttribute('style',option.style);
+    			}
+    			if (option.selected !== undefined) {
+    				newOption.setAttribute('selected','');
+    			}
+    			newControl.appendChild(newOption);
+    		});
+    	}
+    	else { // it's an input
+    		var newControl = document.createElement("input");
+    	}
+    	setting.attributes.forEach(function(attribute){
+			theKey = Object.keys(attribute);
+			newControl.setAttribute(theKey, attribute[theKey]);
+		});
+    	newLabel.appendChild(newControl);
+    });
+    
+    toolset.insertBefore(fieldContainer, theButton);
+  });
+  
+  toolset.addEventListener('submit', saveForm);
+  
+});
+
+var saveForm = function(event) {
+  event.preventDefault();
+  
+  var domFields = document.querySelectorAll("input");
+  
+  theObject.fields.forEach(function(field, index) {
+    //bit of cheating, we know it is displayed in the same order, so no bother checking everything.
+    field.value = domFields[index].value;
+  });
+  console.log(theObject);  
+}
+</script>
+</body>
+</html>
