@@ -52,7 +52,7 @@ main.active {
 	background: white;
 	height: 100vh;
 	overflow-y: scroll;
-	font-family: "Irma Text Narrow";
+	font-family: "Fedra Sans Condensed", Neutral, "Irma Text Narrow";
 	font-style: Normal;
 	font-weight: 400;
 	font-stretch: normal;
@@ -62,8 +62,8 @@ main.active {
 	color: black !important;
 }
 #toolset, #toolset select, #toolset input {
-	font-size: 14.4px !important;
-	font-family: "Irma Text Narrow";
+	font-size: 16px !important;
+	font-family: "Fedra Sans Condensed", Neutral, "Irma Text Narrow";
 	font-style: Normal;
 	font-weight: 400;
 	font-stretch: normal;
@@ -144,7 +144,7 @@ main.active {
 }
 
 #toolset legend {
-	font-weight: 700;
+	font-weight: 600;
   	font-style: normal;
   	background: white;
   	line-height: 1;
@@ -211,6 +211,12 @@ main.active {
 	right: 50vw;
 	bottom: 61.1111vh;
 	opacity: 0;
+	font-family: Neutral, "Irma Text Narrow";
+	font-style: Normal;
+	font-weight: 400;
+	font-stretch: normal;
+	width: 1px;
+	height: 1px;
 }
 #help-section * {
 	font-size: inherit !important;
@@ -224,6 +230,8 @@ main.active {
 	top: 0;
 	right: 0;
 	border-width: 11.1111vh 11.1111vw 22.2222vh;
+	width: 77.77777vw;
+	height: 66.6666vh;
 }
 #help-section p {
 	max-width: 30em;
@@ -237,9 +245,7 @@ main.active {
 #help-section h1 {
 	font-size: 1em;
 	min-height: 11vh;
-	font-weight: normal;
-	font-variant: small-caps;
-	text-transform: lowercase;
+	font-weight: 500;
 	margin-top: 0;
 }
 #help-section h2 {
@@ -247,7 +253,7 @@ main.active {
 	margin-top: 5.5555vh;
 	margin-bottom: 0em;
 	font-style: italic;
-	font-weight: normal;
+	font-weight: 500;
 }
 #help-section ul {
 	margin: 1em 0;

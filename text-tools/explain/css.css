@@ -1,0 +1,65 @@
+html {
+	font-size: 16px !important;
+	font-family: Neutral, "Irma Text Narrow";
+	font-style: Normal;
+	font-weight: 400;
+	font-stretch: normal;
+	background: white
+}
+p {
+	width: 39vw;
+	max-width: 30em;
+}
+body {
+	background: white;
+	padding: 5.5555vh 5.5555% 11.1111vh;
+	min-height: 66.6666vh;
+	box-sizing: border-box;
+}
+h1 {
+	font-size: 1em;
+	min-height: 11vh;
+	font-weight: 500;
+	margin-top: 0;
+}
+h2 {
+	font-size: 1em;
+	margin-top: 5.5555vh;
+	margin-bottom: 0em;
+	font-style: italic;
+	font-weight: 500;
+}
+ul {
+	margin: 1em 0;
+	padding: 0;
+}
+img {
+	position: fixed;
+	right: 5.5555vw;
+	top: calc(16.6666vh + 1em);
+	width: 39vw;
+	opacity: 1;
+	transition: .3s;
+}
+.swapping{
+	opacity: 0;
+}
+
+a[href^="img/"]:hover {
+	text-decoration: none;
+	
+}
+a[href^="img/"]::before {
+	position: absolute;
+	opacity: 0;
+	content: attr(data-text);
+	transition: .3s;
+}
+a[href^="img/"]:hover::before {
+	opacity: 1;
+	position: absolute;
+	background: red;
+	margin: 0;
+	min-width: 50vw;
+	
+}

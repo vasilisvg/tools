@@ -288,15 +288,12 @@ function setPageMargin(el) {
 		i++;
 	}
 	function showHelp(href) {
-		microAjax(href, function (res) {
-		  var body = res.split('<body>');
-		  var content = body[1].split('</body>');
-		  document.getElementById('help-section').innerHTML = '<div>'+content[0]+'</div>';
-		  document.getElementById('help-section').classList.add('is-open');
-		});
-	}
-	document.getElementById('help-section').onclick = function(){
-		document.getElementById('help-section').classList.remove('is-open');
+		document.getElementById('help-section').setAttribute('src',href);
+		document.getElementById('help-section').classList.add('is-open');
+		document.getElementById('help-section').onclick = function(){
+			document.getElementById('help-section').classList.remove('is-open');
+		}
+		
 	}
 })();
 

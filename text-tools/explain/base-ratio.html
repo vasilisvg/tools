@@ -4,15 +4,31 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Explain what you mean with ‘base ratio'</title>
+	<link rel="stylesheet" href="http://fonts.typotheque.com/WF-023273-007784.css">
+	<link rel="stylesheet" href="css.css">
 </head>
 <body>
 <h1>Base ratio</h1>
-<p>This setting is about the placement of the content relative to its canvas. The canvas can be the whole viewport, or a content wrapper, like a column in a layout. With this setting you can control the white-space around it. The different settings are based on the different canons that Jan Tschichold describes in his essays. The most famous one is the <em>Van de Graaf method</em>, which results in a beautiful placement regardless of the size and ratio of the content.</p>
+<p>This setting is about the placement of the content relative to its canvas. The canvas can be <a href="img/whole-viewport.svg" data-text="the whole viewport">the whole viewport</a>, or a <a href="img/content-wrapper.svg" data-text="content wrapper">content wrapper</a>, like a column in a layout. With this setting you can control the white-space around it. The different settings are based on the different canons that Jan Tschichold describes in his essays. The most famous one is the <em>Van de Graaf method</em>, which results in a beautiful placement regardless of the size and ratio of the content.</p>
 
 <h2>I want to know more!</h2>
 <ul>
 	<li><a href="http://nerd.vasilis.nl/code/tschicholds-figures/responsive/">An example of the Van de Graaf canon</a></li>
 	<li><a href="http://retinart.net/graphic-design/secret-law-of-page-harmony/">The Secret Law of Page Harmony</a></li>
 </ul>
+<img src="img/whole-viewport.svg" alt="">
+<script>
+var imgLink = document.querySelector('a[href^="img/"]');
+var theImg = document.querySelector('img');
+imgLink.onmouseover = function() {
+	theImg.classList.add('swapping');
+	setTimeout(function(){
+		imgSrc = imgLink.href;
+		theImg.src = imgSrc;
+		theImg.classList.remove('swapping');
+	}, 300);
+	
+}
+</script>
 </body>
 </html>

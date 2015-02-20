@@ -1,0 +1,94 @@
+html {
+	font: bold 100%/1.2 helvetica, sans-serif;
+	height: 100vh;
+}
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+article {
+	width: 90vmin;
+	height: 90vmin;
+	border: 1px solid silver;
+	position: relative;
+	box-sizing: border-box;
+}
+article > * {
+	position: absolute;
+}
+.grey > *:not(div) {
+	background: grey;
+	color: grey;
+}
+
+h1 {
+	margin: 0;
+	font-size: 6.37vmin;
+	line-height: 1;
+}
+h2 {
+	margin: 0;
+	font-size: 4.5vmin;
+	width: 66.66667%;
+	top: 6vmin;
+}
+ul {
+	line-height: 1.2;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 33.33333%;
+	font-size: 4vmin;
+	top: 12vmin;
+}
+p {
+	margin: 0;
+	line-height: 1.2;
+	font-size: 3.8vmin;
+	width: 33.33333%;
+	top: 26vmin;
+}
+p + p {
+	font-size: 3.3vmin;
+	top: 30vmin;
+}
+footer {
+	margin: 0;
+	padding: 0;
+	width: 66.6666%;
+	font-size: 3.68vmin;
+	top: 34vmin;
+}
+
+div:first-of-type {
+	width: 33.3333%;
+	height: inherit;
+	position: absolute;
+	left: calc(33.3333% - 1px);
+	border: solid silver;
+	border-width: 0 1px;
+	z-index: -1;
+}
+div:nth-of-type(2) {
+	height: 33.3333%;
+	width: inherit;
+	position: absolute;
+	top: calc(33.3333% - 1px);
+	border: solid silver;
+	border-width: 1px 0;
+	z-index: -1;
+}
+.no-grid div:nth-of-type(-n + 2) {
+	display: none;
+}
+.dot {
+	width: 8.333325%;
+	height: 8.333325%;
+	border-radius: 50%;
+	background: grey;
+	top: 40.3vmin;
+}
