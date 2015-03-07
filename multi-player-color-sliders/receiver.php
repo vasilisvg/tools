@@ -31,13 +31,16 @@ article {
 div::after {
 	display: block;
 	padding: 11.1111vh 11.1111vw;
-	font-size: 200%;
 }
 div:empty::after {
 	content: '…not yet. Maybe a refresh if this takes too long?';
+	font-size: 100%;
+	color: gray;
 }
 div.go::after {
 	content: 'It works! You can start sliding now.';
+	font-size: 200%;
+	color: black;
 }
 </style>
 </head>
