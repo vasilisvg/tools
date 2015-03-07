@@ -30,7 +30,7 @@ label {
 </head>
 <body>
 <div></div>
-<label>Hue
+<label>Hue <output for="id">
 <input type="range" min="1" max="360" id="hue" value="1">
 </label>
 <label>
