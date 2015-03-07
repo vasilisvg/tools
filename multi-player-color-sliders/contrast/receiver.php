@@ -49,10 +49,24 @@ div.go::after {
 	font-size: 200%;
 	color: black;
 }
+#overlay {
+	position: fixed;
+	top: -100vh;
+	height: 100vh;
+	width: 100vw;
+	opacity: 0;
+	transition: opacity .25s;
+}
+#overlay.jep {
+	top: 0;
+	opacity: 1;
+}
+
 </style>
 </head>
 <body>
 <div></div>
+<div id="overlay"></div>
 <script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
 <script>
 <?php include 'settings.php'; ?>
@@ -84,11 +98,18 @@ peer.on('connection', function(conn) {
 	});
 });
 
-var el = document.getElementById("section");
-el.addEventListener("click", showOne(el), false);
+var el = document.querySelector('div');
+el.addEventListener("click", function(e){showOne(e)}, false);
+var el1 = document.querySelector('#overlay');
+el1.addEventListener("click", function(e){hideOne(e)}, false);
 
-function showOne(el) {
-	console.log(el);
+function showOne(e) {
+	var toShow = e.target.parentNode.innerHTML;
+	document.getElementById('overlay').innerHTML = toShow;
+	document.getElementById('overlay').classList.add('jep');
+}
+function hideOne(e) {
+	document.getElementById('overlay').classList.remove('jep');
 }
 </script>
 </body>
