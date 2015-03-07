@@ -36,7 +36,7 @@ div::after {
 div:empty::after {
 	content: '…not yet. Maybe a refresh if this takes too long?';
 }
-.go::after {
+div.go::after {
 	content: 'It works! You can start sliding now.';
 }
 </style>
