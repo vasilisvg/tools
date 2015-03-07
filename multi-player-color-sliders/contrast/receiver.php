@@ -32,7 +32,7 @@ article {
 	align-content: stretch;
 }
 section {
-	
+	flex: 1 1 auto;
 }
 div::after {
 	display: block;
