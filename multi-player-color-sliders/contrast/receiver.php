@@ -63,15 +63,11 @@ peer.on('connection', function(conn) {
 	    	exists.style.background = 'hsl('+data[0]+','+data[1]+'%,'+data[2]+'%)';
 	    }
 	    else {
-	    	var newDiv = document.createElement('article');
-	    	newDiv.setAttribute('id','d'+conn.peer);
-	    	newDiv.style.background = 'hsl('+data[0]+','+data[1]+'%,'+data[2]+'%)';
-	    	if(document.querySelector('div').childNodes.length === 0){
-	    		document.querySelector('div').appendChild(newDiv);
-	    	}
-	    	else {
-	    		document.querySelector('div').insertBefore(newDiv,document.querySelector('div > article'));
-	    	}
+	    	var newDiv = '<article id="d' + conn.peer + '">';
+	    	newDiv += '<section style="background:hsl('+data[0]+','+data[1]+'%,'+data[2]+'%);"></section>';
+	    	newDiv += '<section style="background:hsl('+data[3]+','+data[4]+'%,'+data[5]+'%);"></section>';
+	    	newDiv += '</article>';
+	    	document.querySelector('div').innerHTML = newDiv + document.querySelector('div').innerHTML;
 	    }
 	  });
 
