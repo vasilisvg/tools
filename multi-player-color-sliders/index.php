@@ -13,9 +13,22 @@ html {
 	   -moz-font-feature-settings: "kern" 1, "liga" on, "dlig" on;
 	        font-feature-settings: "kern" 1, "liga" on, "dlig" on;
 }
+body {
+	width: 50vmin;
+	margin: 0 auto;
+}
 div {
 	width: 50vmin;
 	height: 50vmin;
+}
+@media (min-aspect-ratio: 1000/1000) {
+	div,
+	form {
+		float: left ;
+	}
+	body {
+		width: 100vmin;
+	}
 }
 label, input {
 	display: block;
@@ -44,6 +57,7 @@ output {
 </head>
 <body>
 <div></div>
+<form>
 <label>Hue <output></output>
 <input type="range" min="1" max="360" id="hue" value="1">
 </label>
@@ -55,6 +69,7 @@ Saturation <output></output>
 Lightness <output></output>
 <input type="range" min="0" max="100" id="lig" value="50">
 </label>
+</form>
 <!-- <button>Don’t click</button> -->
 <script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
 <script>
