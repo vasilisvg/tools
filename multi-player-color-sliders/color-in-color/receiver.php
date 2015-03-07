@@ -40,13 +40,13 @@ article > div {
 }
 div > div {
 	width: 20vmin;
-	height: 20vmin;
 	border-radius: 50%;
 }
 .v1 div {
 	width: 5%;
 	border-radius: 0%;
 	position: relative;
+	margin: 10% 0;
 }
 .v1 div::before {
 	content: '';
