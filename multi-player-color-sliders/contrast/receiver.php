@@ -27,11 +27,12 @@ div {
 }
 article {
 	flex: 1 1 20vw;
-	position: relative;
+	display: flex;
+	align-items: stretch;
+	align-content: stretch;
 }
 section {
-	display: inline-block;
-	width: 50%;
+	
 }
 div::after {
 	display: block;
