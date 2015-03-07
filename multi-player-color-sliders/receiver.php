@@ -58,7 +58,7 @@ peer.on('connection', function(conn) {
 	    	var newDiv = document.createElement('article');
 	    	newDiv.setAttribute('id','d'+conn.peer);
 	    	newDiv.style.background = 'hsl('+data[0]+','+data[1]+'%,'+data[2]+'%)';
-	    	if(document.querySelector('div').childNodes.length === 1){
+	    	if(document.querySelector('div').childNodes.length === 0){
 	    		document.querySelector('div').appendChild(newDiv);
 	    	}
 	    	else {
