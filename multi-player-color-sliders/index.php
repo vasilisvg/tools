@@ -48,7 +48,6 @@ var $div= document.querySelector('div');
 <?php include 'settings.php'; ?>
 var peer = new Peer({key: '<?php echo $key; ?>'});
 peer.on('open', function(id) {
-  console.log('My peer ID is: ' + id);
   $div.style.background = 'hsl('+hue.value+','+sat.value+'%,'+lig.value+'%)';
 });
 

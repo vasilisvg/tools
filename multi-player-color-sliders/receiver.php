@@ -43,16 +43,13 @@ article {
 <?php include 'settings.php'; ?>
 var peer = new Peer('<?php echo $teacher; ?>',{key: '<?php echo $key; ?>'});
 peer.on('open', function(id) {
-  console.log('My peer ID is: ' + id);
   document.querySelector('div').classList.add('go');
 });
 peer.on('connection', function(conn) { 
-	//console.log(conn);
 	conn.on('open', function() {
 	  // Receive messages
 	  conn.on('data', function(data) {
 	  	document.querySelector('div').classList.remove('go');
-	    console.log('Received from' + conn.peer, data);
 	    exists = document.getElementById('d'+conn.peer);
 	    if(exists) {
 	    	exists.style.background = 'hsl('+data[0]+','+data[1]+'%,'+data[2]+'%)';
