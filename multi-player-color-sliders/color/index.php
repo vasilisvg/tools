@@ -66,11 +66,11 @@ output {
 }
 </style>
 </head>
-<body class="loading">
+<body class="">
 <?php 
 $h = mt_rand(1,360);
-$s = mt_rand(0,100);
-$l = mt_rand(0,100);
+$s = mt_rand(20,80);
+$l = mt_rand(20,80);
 ?>
 <div style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"></div>
 <form>
