@@ -15,7 +15,7 @@ html {
 }
 body {
 	margin: 5vh 5vw 10vh;
-	height: 100vh;
+	height: 85vh;
 }
 div {
 	width: 100%;
