@@ -131,6 +131,7 @@ while(i<$sl.length){
 		  hue1 = $sl[3];
 		  sat1 = $sl[4];
 		  lig1 = $sl[5];
+		  console.log('hoi');
 		  conn.send([hue.value,sat.value,lig.value,hue1.value,sat1.value,lig1.value]);
 		});
 	}
