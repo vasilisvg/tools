@@ -23,7 +23,7 @@ article {
 	flex: 1 1 20vw;
 }
 .go::after {
-	content: 'go!';
+	content: 'All set!';
 }
 </style>
 </head>
