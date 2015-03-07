@@ -23,7 +23,7 @@ article {
 	flex: 1 1 20vw;
 }
 .go::after {
-	content: 'All set!';
+	content: 'It works! You can start sliding now.';
 }
 </style>
 </head>
