@@ -114,6 +114,10 @@ var $sl = document.querySelectorAll('input');
 var i = 0;
 while(i<$sl.length){
 	$sl[i].oninput = function(){
+		tInput = this.parentNode.parentNode.querySelectorAll('input')
+		hue = tInput[0];
+		sat = tInput[1];
+		lig = tInput[2];
 		this.parentNode.parentNode.parentNode.querySelector('div').style.background = 'hsl('+hue.value+','+sat.value+'%,'+lig.value+'%)';
 		this.parentNode.querySelector('output').value=this.value;
 	}
