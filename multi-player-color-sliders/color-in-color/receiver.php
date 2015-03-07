@@ -18,7 +18,7 @@ body {
 	padding: 0;
 	margin: 0;
 }
-div {
+body > div {
 	height: 100vh;
   	display: flex;
   	flex-wrap: wrap;
@@ -35,16 +35,16 @@ article {
 section {
 	flex: 1 1 auto;
 }
-div::after {
+body > div::after {
 	display: block;
 	padding: 11.1111vh 11.1111vw;
 }
-div:empty::after {
+body > div:empty::after {
 	content: '…not yet. Maybe a refresh if this takes too long?';
 	font-size: 100%;
 	color: gray;
 }
-div.go::after {
+body > div.go::after {
 	content: 'It works! You can start sliding now.';
 	font-size: 200%;
 	color: black;
