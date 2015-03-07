@@ -30,6 +30,9 @@ article {
 }
 .go::after {
 	content: 'It works! You can start sliding now.';
+	display: block;
+	padding: 11.1111vh 11.1111vw;
+	font-size: 200%;
 }
 </style>
 </head>
