@@ -16,6 +16,7 @@ html {
 body {
 	margin: 5vh 5vw 10vh;
 	height: 85vh;
+	transition: opacity: .2s;
 }
 section {
 		float: left;
@@ -64,39 +65,52 @@ output {
 	margin: 0 0 0 .2em;
 	display: inline-block;
 }
+.loading {
+	opacity: .2;
+}
 </style>
 </head>
-<body>
+<body class="loading">
 <section>
-<div></div>
+<?php 
+$h = mt_rand(1,360);
+$s = mt_rand(0,100);
+$l = mt_rand(0,100);
+?>
+<div style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"></div>
 <form>
-<label>Hue <output></output>
-<input type="range" min="1" max="360" id="hue" value="1">
+<label>Hue <output><?php echo $h; ?></output>
+<input type="range" min="1" max="360" id="hue" value="<?php echo $h; ?>">
 </label>
 <label>
-Saturation <output></output>
-<input type="range" min="0" max="100" id="sat" value="50">
+Saturation <output><?php echo $s; ?></output>
+<input type="range" min="0" max="100" id="sat" value="<?php echo $s; ?>">
 </label>
 <label>
-Lightness <output></output>
-<input type="range" min="0" max="100" id="lig" value="50">
+Lightness <output><?php echo $l; ?></output>
+<input type="range" min="0" max="100" id="lig" value="<?php echo $l; ?>">
 </label>
 </form>
 </section>
 
 <section>
-<div></div>
+<?php 
+$h = mt_rand(1,360);
+$s = mt_rand(0,100);
+$l = mt_rand(0,100);
+?>
+<div style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"></div>
 <form>
-<label>Hue <output></output>
-<input type="range" min="1" max="360" id="hue1" value="1">
+<label>Hue <output><?php echo $h; ?></output>
+<input type="range" min="1" max="360" id="hue1" value="<?php echo $h; ?>">
 </label>
 <label>
-Saturation <output></output>
-<input type="range" min="0" max="100" id="sat1" value="50">
+Saturation <output><?php echo $s; ?></output>
+<input type="range" min="0" max="100" id="sat1" value="<?php echo $s; ?>">
 </label>
 <label>
-Lightness <output></output>
-<input type="range" min="0" max="100" id="lig1" value="50">
+Lightness <output><?php echo $l; ?></output>
+<input type="range" min="0" max="100" id="lig1" value="<?php echo $l; ?>">
 </label>
 </form>
 </section>
@@ -107,7 +121,7 @@ var $div= document.querySelector('div');
 <?php include 'settings.php'; ?>
 var peer = new Peer({key: '<?php echo $key; ?>'});
 peer.on('open', function(id) {
-  $div.style.background = 'hsl('+hue.value+','+sat.value+'%,'+lig.value+'%)';
+  document.body.classList.remove('loading');
 });
 
 var $sl = document.querySelectorAll('input');
