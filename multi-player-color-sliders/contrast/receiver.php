@@ -83,6 +83,13 @@ peer.on('connection', function(conn) {
 	  conn.send('Hello!');
 	});
 });
+
+var el = document.getElementById("section");
+el.addEventListener("click", showOne(el), false);
+
+function showOne(el) {
+	console.log(el);
+}
 </script>
 </body>
 </html>
