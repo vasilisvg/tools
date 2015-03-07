@@ -47,8 +47,12 @@ peer.on('connection', function(conn) {
 	    	var newDiv = document.createElement('article');
 	    	newDiv.setAttribute('id','d'+conn.peer);
 	    	newDiv.style.background = 'hsl('+data[0]+','+data[1]+'%,'+data[2]+'%)';
-	    	document.querySelector('div').innerHTML = newDiv + document.querySelector('div').innerHTML;
-	    	// works?
+	    	if(document.querySelector('div').childNodes.length === 1){
+	    		document.querySelector('div').appendChild(newDiv);
+	    	}
+	    	else {
+	    		document.querySelector('div').insertBefore(newDiv,document.querySelector('div > article'));
+	    	}
 	    }
 	  });
 
