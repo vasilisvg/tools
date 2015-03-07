@@ -81,13 +81,11 @@ peer.on('connection', function(conn) {
 	  	document.querySelector('div').classList.remove('go');
 	    exists = document.getElementById('d'+conn.peer);
 	    if(exists) {
-	    	exists.querySelector('section').style.background = 'hsl('+data[0]+','+data[1]+'%,'+data[2]+'%)';
-	    	exists.querySelector('section:last-of-type').style.background = 'hsl('+data[3]+','+data[4]+'%,'+data[5]+'%)';
+	    	exists.innerHTML = data;
 	    }
 	    else {
 	    	var newDiv = '<article id="d' + conn.peer + '">';
-	    	newDiv += '<section style="background:hsl('+data[0]+','+data[1]+'%,'+data[2]+'%);"></section>';
-	    	newDiv += '<section style="background:hsl('+data[3]+','+data[4]+'%,'+data[5]+'%);"></section>';
+	    	newDiv += data;
 	    	newDiv += '</article>';
 	    	document.querySelector('div').innerHTML = newDiv + document.querySelector('div').innerHTML;
 	    }

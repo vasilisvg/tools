@@ -28,17 +28,45 @@ div {
 	height: 50%;
 	background: silver;
 	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-@media (min-aspect-ratio: 1/1) {
-	section {
-		float: left;
-		width: 50%;
-	}
-	form {
+div div {
+	width: 20vmin;
+	height: 20vmin;
+	border-radius: 50%;
+	display: block;
+}
+.v1 div {
+	width: 5%;
+	height: 50%;
+	border-radius: 0%;
+	position: relative;
+}
+.v1 div::before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: inherit;
+	margin: 0 0 0 -200%;
+	position: absolute;
+}
+.v1 div::after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: inherit;
+	right: -200%;
+	position: absolute;
+}
+
+form {
 		padding: 0 0 0 1em;
 		box-sizing: border-box;
 	}
-}
 label, input {
 	display: block;
 	width: 100%;
@@ -71,13 +99,16 @@ output {
 </style>
 </head>
 <body class="">
-<section>
 <?php 
 $h = mt_rand(1,360);
 $s = mt_rand(20,80);
 $l = mt_rand(20,80);
+$h1 = mt_rand(1,360);
+$s1 = mt_rand(20,80);
+$l1 = mt_rand(20,80);
 ?>
-<div style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"></div>
+<div class="v<?php echo mt_rand(0,1); ?>" style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"><div style="background:hsl(<?php echo $h1.','.$s1.'%,'.$l1.'%'; ?>);"></div></div>
+<section>
 <form>
 <label>Hue <output><?php echo $h; ?></output>
 <input type="range" min="1" max="360" id="hue" value="<?php echo $h; ?>">
@@ -94,23 +125,17 @@ Lightness <output><?php echo $l; ?></output>
 </section>
 
 <section>
-<?php 
-$h = mt_rand(1,360);
-$s = mt_rand(20,80);
-$l = mt_rand(20,80);
-?>
-<div style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"></div>
 <form>
-<label>Hue <output><?php echo $h; ?></output>
-<input type="range" min="1" max="360" id="hue1" value="<?php echo $h; ?>">
+<label>Hue <output><?php echo $h1; ?></output>
+<input data-name="2" type="range" min="1" max="360" id="hue1" value="<?php echo $h1; ?>">
 </label>
 <label>
-Saturation <output><?php echo $s; ?></output>
-<input type="range" min="0" max="100" id="sat1" value="<?php echo $s; ?>">
+Saturation <output><?php echo $s1; ?></output>
+<input data-name="2" type="range" min="0" max="100" id="sat1" value="<?php echo $s1; ?>">
 </label>
 <label>
-Lightness <output><?php echo $l; ?></output>
-<input type="range" min="0" max="100" id="lig1" value="<?php echo $l; ?>">
+Lightness <output><?php echo $l1; ?></output>
+<input data-name="2" type="range" min="0" max="100" id="lig1" value="<?php echo $l1; ?>">
 </label>
 </form>
 </section>
@@ -132,20 +157,21 @@ while(i<$sl.length){
 		hue = tInput[0];
 		sat = tInput[1];
 		lig = tInput[2];
-		this.parentNode.parentNode.parentNode.querySelector('div').style.background = 'hsl('+hue.value+','+sat.value+'%,'+lig.value+'%)';
+		if (this.getAttribute('data-name') === '2') {
+			document.querySelector('div div').style.background = 'hsl('+hue.value+','+sat.value+'%,'+lig.value+'%)';
+		}
+		else {
+			document.querySelector('div').style.background = 'hsl('+hue.value+','+sat.value+'%,'+lig.value+'%)';
+		}
+		
 		this.parentNode.querySelector('output').value=this.value;
 	}
 	$sl[i].onchange = function(){
+		
 		var conn = peer.connect('<?php echo $teacher; ?>');
 		conn.on('open', function() {
-		  var $sl = document.querySelectorAll('input');
-		  hue = $sl[0];
-		  sat = $sl[1];
-		  lig = $sl[2];
-		  hue1 = $sl[3];
-		  sat1 = $sl[4];
-		  lig1 = $sl[5];
-		  conn.send([hue.value,sat.value,lig.value,hue1.value,sat1.value,lig1.value]);
+		  var theHTML = document.querySelector('div').outerHTML);
+		  conn.send(theHTML);
 		});
 	}
 	i++;
