@@ -66,7 +66,8 @@ peer.on('connection', function(conn) {
 	  	document.querySelector('div').classList.remove('go');
 	    exists = document.getElementById('d'+conn.peer);
 	    if(exists) {
-	    	exists.style.background = 'hsl('+data[0]+','+data[1]+'%,'+data[2]+'%)';
+	    	exists.querySelector('section').style.background = 'hsl('+data[0]+','+data[1]+'%,'+data[2]+'%)';
+	    	exists.querySelector('section:last-of-type').style.background = 'hsl('+data[3]+','+data[4]+'%,'+data[5]+'%)';
 	    }
 	    else {
 	    	var newDiv = '<article id="d' + conn.peer + '">';
