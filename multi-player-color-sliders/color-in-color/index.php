@@ -170,7 +170,7 @@ while(i<$sl.length){
 		
 		var conn = peer.connect('<?php echo $teacher; ?>');
 		conn.on('open', function() {
-		  var theHTML = document.querySelector('div').outerHTML);
+		  var theHTML = document.querySelector('div').outerHTML;
 		  conn.send(theHTML);
 		});
 	}
