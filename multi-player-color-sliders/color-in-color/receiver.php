@@ -31,12 +31,14 @@ article {
 	align-items: stretch;
 	align-content: stretch;
 	margin: .1em;
+	height: 100%;
 }
 article > div {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: 100%;
 }
 div > div {
 	width: 20vmin;
