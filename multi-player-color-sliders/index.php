@@ -56,6 +56,7 @@ var i = 0;
 while(i<$sl.length){
 	$sl[i].oninput = function(){
 		$div.style.background = 'hsl('+hue.value+','+sat.value+'%,'+lig.value+'%)';
+		this.parentNode.querySelector('output').value=this.value;
 	}
 	$sl[i].onchange = function(){
 		var conn = peer.connect('<?php echo $teacher; ?>');
