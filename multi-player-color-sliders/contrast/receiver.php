@@ -27,6 +27,11 @@ div {
 }
 article {
 	flex: 1 1 20vw;
+	position: relative;
+}
+section {
+	display: inline-block;
+	width: 50%;
 }
 div::after {
 	display: block;
