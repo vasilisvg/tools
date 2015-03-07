@@ -16,7 +16,7 @@ html {
 body {
 	margin: 5vh 5vw 10vh;
 	height: 85vh;
-	transition: opacity: .2s;
+	transition: opacity .2s;
 }
 section {
 		float: left;
