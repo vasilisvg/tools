@@ -25,9 +25,7 @@ article {
 </style>
 </head>
 <body>
-<div>
-	
-</div>
+<div></div>
 <script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
 <script>
 <?php include 'settings.php'; ?>
@@ -49,12 +47,8 @@ peer.on('connection', function(conn) {
 	    	var newDiv = document.createElement('article');
 	    	newDiv.setAttribute('id','d'+conn.peer);
 	    	newDiv.style.background = 'hsl('+data[0]+','+data[1]+'%,'+data[2]+'%)';
-	    	if(document.querySelector('div').childNodes.length === 1){
-	    		document.querySelector('div').appendChild(newDiv);
-	    	}
-	    	else {
-	    		document.querySelector('div').insertBefore(newDiv,document.querySelector('div > article'));
-	    	}
+	    	document.querySelector('div').innerHTML = newDiv + document.querySelector('div').innerHTML;
+	    	
 	    }
 	  });
 
