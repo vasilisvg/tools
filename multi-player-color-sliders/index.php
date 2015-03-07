@@ -14,30 +14,37 @@ html {
 	        font-feature-settings: "kern" 1, "liga" on, "dlig" on;
 }
 body {
-	width: 50vmin;
-	margin: 0 auto;
+	margin: 5vh 5vw 10vh;
+	height: 100vh;
 }
 div {
-	width: 50vmin;
-	height: 50vmin;
+	width: 100%;
+	height: 50%;
+	background: silver;
+	margin: 0;
 }
-@media (min-aspect-ratio: 1000/1000) {
+@media (min-aspect-ratio: 1/1) {
 	div,
 	form {
-		float: left ;
+		float: left;
+		width: 50%;
 	}
-	body {
-		width: 100vmin;
+	form {
+		padding: 0 0 0 1em;
+		box-sizing: border-box;
 	}
 }
 label, input {
 	display: block;
-	width: 50vmin;
+	width: 100%;
 	margin: 0;
 	padding: 0;
 }
 label {
 	margin: 1em 0;
+}
+input {
+	max-width: 30em;
 }
 output:empty {
 	opacity:0;
