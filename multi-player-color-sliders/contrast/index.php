@@ -17,6 +17,11 @@ body {
 	margin: 5vh 5vw 10vh;
 	height: 85vh;
 }
+section {
+		float: left;
+		width: 50%;
+		height: 100%;
+	}
 div {
 	width: 100%;
 	height: 50%;
@@ -24,8 +29,7 @@ div {
 	margin: 0;
 }
 @media (min-aspect-ratio: 1/1) {
-	div,
-	form {
+	section {
 		float: left;
 		width: 50%;
 	}
@@ -63,6 +67,7 @@ output {
 </style>
 </head>
 <body>
+<section>
 <div></div>
 <form>
 <label>Hue <output></output>
@@ -77,6 +82,24 @@ Lightness <output></output>
 <input type="range" min="0" max="100" id="lig" value="50">
 </label>
 </form>
+</section>
+
+<section>
+<div></div>
+<form>
+<label>Hue <output></output>
+<input type="range" min="1" max="360" id="hue1" value="1">
+</label>
+<label>
+Saturation <output></output>
+<input type="range" min="0" max="100" id="sat1" value="50">
+</label>
+<label>
+Lightness <output></output>
+<input type="range" min="0" max="100" id="lig1" value="50">
+</label>
+</form>
+</section>
 <!-- <button>Don’t click</button> -->
 <script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
 <script>
@@ -91,7 +114,7 @@ var $sl = document.querySelectorAll('input');
 var i = 0;
 while(i<$sl.length){
 	$sl[i].oninput = function(){
-		$div.style.background = 'hsl('+hue.value+','+sat.value+'%,'+lig.value+'%)';
+		this.parentNode.parentNode.parentNode.querySelector('div').style.background = 'hsl('+hue.value+','+sat.value+'%,'+lig.value+'%)';
 		this.parentNode.querySelector('output').value=this.value;
 	}
 	$sl[i].onchange = function(){
