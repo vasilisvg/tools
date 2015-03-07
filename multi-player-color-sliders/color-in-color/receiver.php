@@ -32,6 +32,42 @@ article {
 	align-content: stretch;
 	margin: .1em;
 }
+article > div {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+div > div {
+	width: 20vmin;
+	height: 20vmin;
+	border-radius: 50%;
+	display: block;
+}
+.v1 div {
+	width: 5%;
+	height: 50%;
+	border-radius: 0%;
+	position: relative;
+}
+.v1 div::before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: inherit;
+	margin: 0 0 0 -200%;
+	position: absolute;
+}
+.v1 div::after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: inherit;
+	right: -200%;
+	position: absolute;
+}
 section {
 	flex: 1 1 auto;
 }
