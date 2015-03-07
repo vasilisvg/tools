@@ -48,7 +48,7 @@ peer.on('connection', function(conn) {
 	    	newDiv.setAttribute('id','d'+conn.peer);
 	    	newDiv.style.background = 'hsl('+data[0]+','+data[1]+'%,'+data[2]+'%)';
 	    	document.querySelector('div').innerHTML = newDiv + document.querySelector('div').innerHTML;
-	    	
+	    	// works?
 	    }
 	  });
 
