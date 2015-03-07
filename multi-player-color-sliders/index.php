@@ -26,19 +26,33 @@ label, input {
 label {
 	margin: 1em 0;
 }
+output:empty {
+	opacity:0;
+}
+output {
+	box-sizing: border-box;
+	box-shadow: 0 0 0 1px gray;
+	background: hsl(0, 0%, 90%);
+	padding: 0 .2em;
+	opacity: 1;
+	border-radius: .1em;
+	transition: .3s;
+	margin: 0 0 0 .2em;
+	display: inline-block;
+}
 </style>
 </head>
 <body>
 <div></div>
-<label>Hue <output for="id">
+<label>Hue <output></output>
 <input type="range" min="1" max="360" id="hue" value="1">
 </label>
 <label>
-Saturation
+Saturation <output></output>
 <input type="range" min="0" max="100" id="sat" value="50">
 </label>
 <label>
-Lightness
+Lightness <output></output>
 <input type="range" min="0" max="100" id="lig" value="50">
 </label>
 <!-- <button>Don’t click</button> -->
