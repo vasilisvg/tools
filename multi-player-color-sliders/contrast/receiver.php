@@ -30,6 +30,7 @@ article {
 	display: flex;
 	align-items: stretch;
 	align-content: stretch;
+	margin: 1em;
 }
 section {
 	flex: 1 1 auto;
