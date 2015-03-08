@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Making a colour</title>
+	<title>Monochrome light-dark</title>
 	<link rel="stylesheet" href="http://fonts.typotheque.com/WF-023273-007830.css">
 <style>
 html {
@@ -39,38 +39,38 @@ div {
 <?php 
 $h = mt_rand(1,360);
 $s = mt_rand(20,80);
-$l = mt_rand(20,80);
+$l = 90;
 ?>
 <div style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"></div>
 
 
 <?php 
-$h = mt_rand(1,360);
-$s = mt_rand(20,80);
-$l = mt_rand(20,80);
+//$h = mt_rand(1,360);
+//$s = mt_rand(20,80);
+$l  = 70;
 ?>
 <div style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"></div>
 
 
 <?php 
-$h = mt_rand(1,360);
-$s = mt_rand(20,80);
-$l = mt_rand(20,80);
+//$h = mt_rand(1,360);
+//$s = mt_rand(20,80);
+$l = 50;
 ?>
 <div style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"></div>
 
 
 <?php 
-$h = mt_rand(1,360);
-$s = mt_rand(20,80);
-$l = mt_rand(20,80);
+//$h = mt_rand(1,360);
+//$s = mt_rand(20,80);
+$l = 30;
 ?>
 <div style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"></div>
 
 <?php 
-$h = mt_rand(1,360);
-$s = mt_rand(20,80);
-$l = mt_rand(20,80);
+//$h = mt_rand(1,360);
+//$s = mt_rand(20,80);
+$l = 10;
 ?>
 <div style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"></div>
 

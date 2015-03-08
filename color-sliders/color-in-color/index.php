@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Making a colour</title>
+	<title>Colour in a colour</title>
 	<link rel="stylesheet" href="http://fonts.typotheque.com/WF-023273-007830.css">
 <style>
 html {
@@ -101,11 +101,11 @@ output {
 <body class="">
 <?php 
 $h = mt_rand(1,360);
-$s = mt_rand(20,80);
-$l = mt_rand(20,80);
+$s = mt_rand(70,100);
+$l = mt_rand(40,70);
 $h1 = mt_rand(1,360);
-$s1 = mt_rand(20,80);
-$l1 = mt_rand(20,80);
+$s1 = mt_rand(70,100);
+$l1 = mt_rand(40,70);
 ?>
 <div class="v<?php echo mt_rand(0,1); ?>" style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"><div style="background:hsl(<?php echo $h1.','.$s1.'%,'.$l1.'%'; ?>);"></div></div>
 <section>
@@ -140,14 +140,9 @@ Lightness <output><?php echo $l1; ?></output>
 </form>
 </section>
 <!-- <button>Don’t click</button> -->
-<script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
 <script>
 var $div= document.querySelector('div');
-<?php include 'settings.php'; ?>
-var peer = new Peer({key: '<?php echo $key; ?>'});
-peer.on('open', function(id) {
-  document.body.classList.remove('loading');
-});
+
 
 var $sl = document.querySelectorAll('input');
 var i = 0;
@@ -165,14 +160,6 @@ while(i<$sl.length){
 		}
 		
 		this.parentNode.querySelector('output').value=this.value;
-	}
-	$sl[i].onchange = function(){
-		
-		var conn = peer.connect('<?php echo $teacher; ?>');
-		conn.on('open', function() {
-		  var theHTML = document.querySelector('div').outerHTML;
-		  conn.send(theHTML);
-		});
 	}
 	i++;
 }
