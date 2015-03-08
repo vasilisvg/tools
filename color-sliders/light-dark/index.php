@@ -67,6 +67,13 @@ $l = mt_rand(20,80);
 ?>
 <div style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"></div>
 
+<?php 
+$h = mt_rand(1,360);
+$s = mt_rand(20,80);
+$l = mt_rand(20,80);
+?>
+<div style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"></div>
+
 
 
 <script>
