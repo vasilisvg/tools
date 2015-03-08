@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Making a colour</title>
+	<title>Simultaancontrast</title>
 	<link rel="stylesheet" href="http://fonts.typotheque.com/WF-023273-007830.css">
 <style>
 html {
@@ -113,7 +113,7 @@ $h = mt_rand(1,360);
 $s = mt_rand(40,100);
 $l = mt_rand(30,70);
 $h1 = mt_rand(1,360);
-$s1 = mt_rand(20,80);
+$s1 = mt_rand(40,100);
 $l1 = mt_rand(30,70);
 $l2 = mt_rand(30,70);
 ?>
