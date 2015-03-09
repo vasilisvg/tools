@@ -117,7 +117,7 @@ $s1 = mt_rand(40,100);
 $l1 = mt_rand(30,70);
 $l2 = mt_rand(30,70);
 ?>
-<div class="v<?php echo mt_rand(0,1); ?>" style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"><div style="background:hsl(<?php echo $h1.',0%,'.$l2.'%'; ?>);"></div></div>
+<div class="v1" style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"><div style="background:hsl(<?php echo $h1.',0%,'.$l2.'%'; ?>);"></div></div>
 
 
 <section>
