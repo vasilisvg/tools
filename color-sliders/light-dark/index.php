@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Making a colour</title>
+	<title>Quantity contrast</title>
 	<link rel="stylesheet" href="http://fonts.typotheque.com/WF-023273-007830.css">
 <style>
 html {

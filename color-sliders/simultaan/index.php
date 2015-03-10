@@ -38,8 +38,14 @@ div + section {
 	width: 40%;
 }
 section > div {
-	margin: 0 0 0 1em;
 	height: 40%;
+	width: 100%;
+	position: absolute;
+	transition: width .3s;
+	right: -1em;
+}
+section > div:hover {
+	width: calc(250% + 1em);
 }
 div div {
 	width: 20vmin;
@@ -73,6 +79,7 @@ div div {
 }
 
 form {
+	margin: 40vh 0 0 ;
 		padding: 0 0 0 1em;
 		box-sizing: border-box;
 	}
@@ -121,7 +128,7 @@ $l2 = mt_rand(30,70);
 
 
 <section>
-<div style="background:hsl(<?php echo $h1.','.$s1.'%,'.$l1.'%'; ?>);"></div>
+<div style="background:hsl(<?php echo $h1.','.$s1.'%,100%'; ?>);"></div>
 <form>
 <label>Hue <output><?php echo $h1; ?></output>
 <input data-name="2" type="range" min="1" max="360" id="hue1" value="<?php echo $h1; ?>">
@@ -131,8 +138,8 @@ Saturation <output><?php echo $s1; ?></output>
 <input data-name="2" type="range" min="0" max="100" id="sat1" value="<?php echo $s1; ?>">
 </label>
 <label>
-Lightness <output><?php echo $l1; ?></output>
-<input data-name="2" type="range" min="0" max="100" id="lig1" value="<?php echo $l1; ?>">
+Lightness <output>100</output>
+<input data-name="2" type="range" min="0" max="100" id="lig1" value="100">
 </label>
 </form>
 </section>
