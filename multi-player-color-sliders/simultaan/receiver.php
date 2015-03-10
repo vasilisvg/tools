@@ -44,29 +44,12 @@ div > div {
 	border-radius: 50%;
 }
 .v1 div {
-	width: 5%;
+	width: 80%;
 	border-radius: 0%;
 	position: relative;
-	margin: 20% 0;
+	margin: 40% 0 40% 20%;
 }
-.v1 div::before {
-	content: '';
-	display: block;
-	width: 100%;
-	height: 100%;
-	background: inherit;
-	margin: 0 0 0 -200%;
-	position: absolute;
-}
-.v1 div::after {
-	content: '';
-	display: block;
-	width: 100%;
-	height: 100%;
-	background: inherit;
-	right: -200%;
-	position: absolute;
-}
+
 section {
 	flex: 1 1 auto;
 }
