@@ -39,14 +39,15 @@ article > div {
 	align-items: stretch;
 }
 div > div {
-	width: 20vmin;
+	width: 20%;
+	margin: 20% 0;
 	border-radius: 50%;
 }
 .v1 div {
 	width: 5%;
 	border-radius: 0%;
 	position: relative;
-	margin: 10% 0;
+	margin: 20% 0;
 }
 .v1 div::before {
 	content: '';
