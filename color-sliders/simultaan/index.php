@@ -124,11 +124,11 @@ $s1 = mt_rand(40,100);
 $l1 = mt_rand(30,70);
 $l2 = mt_rand(30,70);
 ?>
-<div class="v1" style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"><div style="background:hsl(<?php echo $h1.',0%,'.$l2.'%'; ?>);"></div></div>
+<div class="v1" style="background:hsl(<?php echo $h.','.$s.'%,100%'; ?>);"><div style="background:hsl(<?php echo $h1.',0%,'.$l2.'%'; ?>);"></div></div>
 
 
 <section>
-<div style="background:hsl(<?php echo $h1.','.$s1.'%,100%'; ?>);"></div>
+<div style="background:hsl(<?php echo $h1.','.$s1.'%,'.$l1.'%'; ?>);"></div>
 <form>
 <label>Hue <output><?php echo $h1; ?></output>
 <input data-name="2" type="range" min="1" max="360" id="hue1" value="<?php echo $h1; ?>">
@@ -138,8 +138,8 @@ Saturation <output><?php echo $s1; ?></output>
 <input data-name="2" type="range" min="0" max="100" id="sat1" value="<?php echo $s1; ?>">
 </label>
 <label>
-Lightness <output>100</output>
-<input data-name="2" type="range" min="0" max="100" id="lig1" value="100">
+Lightness <output><?php echo $l1; ?></output>
+<input data-name="2" type="range" min="0" max="100" id="lig1" value="<?php echo $l1; ?>">
 </label>
 </form>
 </section>
