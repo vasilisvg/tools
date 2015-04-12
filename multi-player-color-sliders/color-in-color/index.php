@@ -140,7 +140,7 @@ Lightness <output><?php echo $l1; ?></output>
 </form>
 </section>
 <!-- <button>Don’t click</button> -->
-<script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
+<script src="//cdn.peerjs.com/0.3/peer.min.js"></script>
 <script>
 var $div= document.querySelector('div');
 <?php include 'settings.php'; ?>
