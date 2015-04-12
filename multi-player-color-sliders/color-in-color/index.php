@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Making a colour</title>
-	<link rel="stylesheet" href="http://fonts.typotheque.com/WF-023273-007830.css">
+	<link rel="stylesheet" href="//fonts.typotheque.com/WF-023273-007830.css">
 <style>
 html {
 	font: 111%/1.5  "Fedra Sans Screen 2", helvetica, arial, sans-serif;
