@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Simultaancontrast</title>
-	<link rel="stylesheet" href="http://fonts.typotheque.com/WF-023273-007830.css">
+	<link rel="stylesheet" href="//fonts.typotheque.com/WF-023273-007830.css">
 <style>
 html {
 	font: 111%/1.5  "Fedra Sans Screen 2", helvetica, arial, sans-serif;
@@ -144,7 +144,6 @@ Lightness <output><?php echo $l1; ?></output>
 </form>
 </section>
 <!-- <button>Don’t click</button> -->
-<script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
 <script>
 var $div= document.querySelector('div');
 
