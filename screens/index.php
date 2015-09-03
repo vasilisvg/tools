@@ -99,5 +99,19 @@ if ( isset($_GET["u"]) ) {
 	<article tabindex="0">
 		<iframe tabindex="-1" src="<?php echo $url; ?>"></iframe>
 	</article>
+<script>
+var z = 2;
+var art = document.querySelectorAll('article');
+var i = 0;
+while(i<art.length) {
+	art[i].onfocus = function(){
+		this.style.zIndex = z;
+		z++;
+		return false;
+	}
+	i++;
+}
+
+</script>
 </body>
 </html>
