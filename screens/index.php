@@ -28,7 +28,7 @@ article {
 	left: 100px;
 }
 iframe {
-	pointer-events: none;
+	//pointer-events: none;
 }
 article iframe {
 	width: 1440px;
