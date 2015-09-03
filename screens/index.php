@@ -75,10 +75,57 @@ article:nth-of-type(4) iframe {
 	width: 320px;
 	height: 568px;
 }
+article:nth-of-type(5) {
+	width: 425px;
+	height: 717px;
+	background: url(667.svg);
+	padding: 25px;
+	left: 100px;
+	-webkit-transform: scale(.625, .625);
+	    -ms-transform: scale(.625, .625);
+	        transform: scale(.625, .625);
+}
+article:nth-of-type(5) iframe {
+	width: 375px;
+	height: 667px;
+}
 article:focus {
 	z-index: 2;
 }
 </style>
+<?php 
+$other = mt_rand(0,3);
+if ( $other == 1) {
+?>
+<style>
+article { left: 400px;}
+article:nth-of-type(2) { left: 0;}
+article:nth-of-type(3) { left: 1600px;}
+article:nth-of-type(4) { left: 1440px;}
+</style>
+<?php
+}
+if ( $other == 2) {
+?>
+<style>
+article { left: 550px;}
+article:nth-of-type(2) { left: 1550px;}
+article:nth-of-type(3) { left: 0;}
+article:nth-of-type(4) { left: 1990px;}
+</style>
+<?php
+}
+if ( $other == 3) {
+?>
+<style>
+article { left: 0;}
+article:nth-of-type(2) { left: 1050px;}
+article:nth-of-type(3) { left: 1500px;}
+article:nth-of-type(4) { left: 2090px;}
+</style>
+<?php
+}
+?>
 </head>
 <body>
 <?php 
@@ -107,9 +154,16 @@ function GET($name=NULL, $value=false, $option="default")
     }
     else false;
 }
+
+function myUrlEncode($string) {
+    $entities = array('%21', '%2A', '%27', '%28', '%29', '%3B', '%3A', '%40', '%26', '%3D', '%2B', '%24', '%2C', '%2F', '%3F', '%25', '%23', '%5B', '%5D');
+    $replacements = array('!', '*', "'", "(", ")", ";", ":", "@", "&", "=", "+", "$", ",", "/", "?", "%", "#", "[", "]");
+    return str_replace($entities, $replacements, urlencode($string));
+}
+
 $url = 'https://vasilis.nl/';
 if ( isset($_GET["u"]) ) {
-	$url = GET('u');
+	$url = myUrlEncode(GET('u'));
 }
 ?>
 	<article tabindex="0">
@@ -124,6 +178,9 @@ if ( isset($_GET["u"]) ) {
 	<article tabindex="0">
 		<iframe tabindex="-1" src="<?php echo $url; ?>"></iframe>
 	</article>
+	<!-- <article tabindex="0">
+		<iframe tabindex="-1" src="<?php echo $url; ?>"></iframe>
+	</article> -->
 <script>
 var z = 2;
 var art = document.querySelectorAll('article');
