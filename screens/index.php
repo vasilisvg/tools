@@ -33,7 +33,7 @@ iframe {
 article iframe {
 	width: 1440px;
 	height: 900px;
-	border: 0;
+	border: 1px solid silver;
 }
 article:nth-of-type(2) {
 	width: 868px;
