@@ -94,28 +94,9 @@ article:focus {
 }
 </style>
 <?php 
-$other = mt_rand(0,3);
+$other = mt_rand(1,22);
 if ( $other == 1) {
-?>
-<style>
-article { left: 400px;}
-article:nth-of-type(2) { left: 0;}
-article:nth-of-type(3) { left: 1600px;}
-article:nth-of-type(4) { left: 1440px;}
-</style>
-<?php
-}
-if ( $other == 2) {
-?>
-<style>
-article { left: 550px;}
-article:nth-of-type(2) { left: 1550px;}
-article:nth-of-type(3) { left: 0;}
-article:nth-of-type(4) { left: 1990px;}
-</style>
-<?php
-}
-if ( $other == 3) {
+	// 0,1,2,3
 ?>
 <style>
 article { left: 0;}
@@ -125,6 +106,239 @@ article:nth-of-type(4) { left: 2090px;}
 </style>
 <?php
 }
+if ( $other == 2) {
+	// 0,1,3,2
+?>
+<style>
+article { left: 0;}
+article:nth-of-type(2) { left: 1050px;}
+article:nth-of-type(3) { left: 1700px;}
+article:nth-of-type(4) { left: 1500px;}
+</style>
+<?php
+}
+if ( $other == 3) {
+	// 0,2,1,3
+?>
+<style>
+article { left: 0;}
+article:nth-of-type(2) { left: 1650px;}
+article:nth-of-type(3) { left: 1050px;}
+article:nth-of-type(4) { left: 2090px;}
+</style>
+<?php
+}
+if ( $other == 4) {
+	// 1,3,4,2
+?>
+<style>
+article { left: 0;}
+article:nth-of-type(2) { left: 1850px;}
+article:nth-of-type(3) { left: 1050px;}
+article:nth-of-type(4) { left: 1650px;}
+</style>
+<?php
+}
+if ( $other == 5) {
+	// 2,1,3,4
+?>
+<style>
+article { left: 440px;}
+article:nth-of-type(2) { left: 0;}
+article:nth-of-type(3) { left: 1470px;}
+article:nth-of-type(4) { left: 2050px;}
+</style>
+<?php
+}
+if ( $other == 6) {
+	// 2,1,4,3
+?>
+<style>
+article { left: 440px;}
+article:nth-of-type(2) { left: 0;}
+article:nth-of-type(3) { left: 1650px;}
+article:nth-of-type(4) { left: 1470px;}
+</style>
+<?php
+}
+if ( $other == 7) {
+	// 2,3,1,4
+?>
+<style>
+article { left: 1000px;}
+article:nth-of-type(2) { left: 0;}
+article:nth-of-type(3) { left: 440px;}
+article:nth-of-type(4) { left: 2050px;}
+</style>
+<?php
+}
+if ( $other == 8) {
+	// 2,3,4,1
+?>
+<style>
+article { left: 1190px;}
+article:nth-of-type(2) { left: 0;}
+article:nth-of-type(3) { left: 440px;}
+article:nth-of-type(4) { left: 1020px;}
+</style>
+<?php
+}
+if ( $other == 9) {
+	// 2,4,1,3
+?>
+<style>
+article { left: 620px;}
+article:nth-of-type(2) { left: 0;}
+article:nth-of-type(3) { left: 1670px;}
+article:nth-of-type(4) { left: 440px;}
+</style>
+<?php
+}
+if ( $other == 10) {
+	// 2,4,3,1
+?>
+<style>
+article { left: 1190px;}
+article:nth-of-type(2) { left: 0;}
+article:nth-of-type(3) { left: 620px;}
+article:nth-of-type(4) { left: 440px;}
+</style>
+<?php
+}
+if ( $other == 11) {
+	// 3,1,2,4
+?>
+<style>
+article { left: 570px;}
+article:nth-of-type(2) { left: 1600px;}
+article:nth-of-type(3) { left: 0;}
+article:nth-of-type(4) { left: 2050px;}
+</style>
+<?php
+}
+if ( $other == 12) {
+	// 3,1,4,2
+?>
+<style>
+article { left: 570px;}
+article:nth-of-type(2) { left: 1800px;}
+article:nth-of-type(3) { left: 0;}
+article:nth-of-type(4) { left: 1620px;}
+</style>
+<?php
+}
+if ( $other == 13) {
+	// 3,2,1,4
+?>
+<style>
+article { left: 1000px;}
+article:nth-of-type(2) { left: 570px;}
+article:nth-of-type(3) { left: 0;}
+article:nth-of-type(4) { left: 2050px;}
+</style>
+<?php
+}
+if ( $other == 14) {
+	// 3,2,4,1
+?>
+<style>
+article { left: 1190px;}
+article:nth-of-type(2) { left: 570px;}
+article:nth-of-type(3) { left: 0;}
+article:nth-of-type(4) { left: 1020px;}
+</style>
+<?php
+}
+if ( $other == 15) {
+	// 3,4,1,2
+?>
+<style>
+article { left: 770px;}
+article:nth-of-type(2) { left: 1800px;}
+article:nth-of-type(3) { left: 0;}
+article:nth-of-type(4) { left: 590px;}
+</style>
+<?php
+}
+if ( $other == 16) {
+	// 3,4,2,1
+?>
+<style>
+article { left: 1200px;}
+article:nth-of-type(2) { left: 770px;}
+article:nth-of-type(3) { left: 0;}
+article:nth-of-type(4) { left: 590px;}
+</style>
+<?php
+}
+if ( $other == 17) {
+	// 4,1,2,3
+?>
+<style>
+article { left: 180px;}
+article:nth-of-type(2) { left: 1230px;}
+article:nth-of-type(3) { left: 1680px;}
+article:nth-of-type(4) { left: 0;}
+</style>
+<?php
+}
+if ( $other == 18) {
+	// 4,1,3,2
+?>
+<style>
+article { left: 180px;}
+article:nth-of-type(2) { left: 1800px;}
+article:nth-of-type(3) { left: 1230px;}
+article:nth-of-type(4) { left: 0;}
+</style>
+<?php
+}
+if ( $other == 19) {
+	// 4,2,1,3
+?>
+<style>
+article { left: 600px;}
+article:nth-of-type(2) { left: 180px;}
+article:nth-of-type(3) { left: 1630px;}
+article:nth-of-type(4) { left: 0;}
+</style>
+<?php
+}
+if ( $other == 20) {
+	// 4,2,3,1
+?>
+<style>
+article { left: 1200px;}
+article:nth-of-type(2) { left: 180px;}
+article:nth-of-type(3) { left: 620px;}
+article:nth-of-type(4) { left: 0;}
+</style>
+<?php
+}
+if ( $other == 21) {
+	// 4,3,1,2
+?>
+<style>
+article { left: 750px;}
+article:nth-of-type(2) { left: 1800px;}
+article:nth-of-type(3) { left: 180px;}
+article:nth-of-type(4) { left: 0;}
+</style>
+<?php
+}
+if ( $other == 22) {
+	// 4,3,2,1
+?>
+<style>
+article { left: 1190px;}
+article:nth-of-type(2) { left: 750px;}
+article:nth-of-type(3) { left: 180px;}
+article:nth-of-type(4) { left: 0;}
+</style>
+<?php
+}
+
+
 ?>
 </head>
 <body>
