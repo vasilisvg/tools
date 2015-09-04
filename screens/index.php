@@ -194,6 +194,7 @@ while(i<art.length) {
 	i++;
 }
 
+if (window.top !== window.self) { document.body.innerHTML = ''; }
 </script>
 </body>
 </html>
