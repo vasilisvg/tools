@@ -21,6 +21,10 @@ article > * {
 	position: absolute;
 	display: flex;
 	align-items: center;
+	justify-content: center;
+}
+article > *:focus {
+	outline: 1px blue solid;
 }
 .grey > *:not(div) {
 	background: grey;
@@ -29,7 +33,7 @@ article > * {
 
 h1 {
 	margin: 0;
-	font-size: 6.37vmin;
+	font-size: 6.32vmin;
 	line-height: 1.1;
 	width: 100%;
 	text-align: center;
@@ -37,7 +41,7 @@ h1 {
 }
 h2 {
 	margin: 0;
-	font-size: 4.5vmin;
+	font-size: 4.47vmin;
 	width: 66.66667%;
 	top: 6vmin;
 	height: 6%;
@@ -48,10 +52,11 @@ ul {
 	padding: 0;
 	list-style: none;
 	width: 33.33333%;
-	font-size: 4vmin;
+	font-size: 3.95vmin;
 	top: 12vmin;
 	height: 16%;
 	display: block;
+	text-align: center;
 }
 p {
 	margin: 0;
@@ -71,7 +76,7 @@ footer {
 	margin: 0;
 	padding: 0;
 	width: 66.6666%;
-	font-size: 3.68vmin;
+	font-size: 3.65vmin;
 	top: 34vmin;
 	height: 6%;
 	display: flex;
