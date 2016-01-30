@@ -11,7 +11,7 @@ while (i < els.length) {
 }
 
 window.addEventListener('keydown', function(e) {
-	console.log(e.keyCode);
+	//console.log(e.keyCode);
 	var oneHundred = document.querySelector('article').offsetHeight;
 	//console.log(oneHundred)
 	var oneUnit = 1;
@@ -51,7 +51,7 @@ window.addEventListener('keydown', function(e) {
 				}
 			}
 			if (hasFocus.tagName === 'P' || hasFocus.tagName === 'UL') {
-				console.log(curLeft)
+				//console.log(curLeft)
 				if (curLeft < 2) {
 					oneUnit = 33.33333;
 				}
@@ -111,5 +111,44 @@ window.addEventListener('keydown', function(e) {
 	if (e.keyCode == 87) { // w = toggle help/wat?
 		document.querySelector('aside').classList.toggle('show');
 	}
-	//console.log('has changed');
+	hasChanged();
 });
+document.querySelector('body > a ').onclick = function(){
+	document.querySelector('aside').classList.toggle('show');
+	return false;
+}
+document.querySelector('aside > a ').onclick = function(){
+	document.querySelector('aside').classList.toggle('show');
+	return false;
+}
+function hasChanged(){
+	var h1 = document.querySelector('article > h1');
+	var h2 = document.querySelector('article > h2');
+	var ul = document.querySelector('article > ul');
+	var p1 = document.querySelector('article > p:first-of-type');
+	var p2 = document.querySelector('article > p:last-of-type');
+	var f = document.querySelector('article > footer');
+	var d = document.querySelector('article > .dot');
+
+	var h1t = r(h1.style.top);
+	var h2t = r(h2.style.top);
+	var ult = r(ul.style.top);
+	var p1t = r(p1.style.top);
+	var p2t = r(p2.style.top);
+	var ft = r(f.style.top);
+	var dt = r(d.style.top);
+	var h1l = 0;
+	var h2l = r(h2.style.left);
+	var ull = r(ul.style.left);
+	var p1l = r(p1.style.left);
+	var p2l = r(p2.style.left);
+	var fl = r(f.style.left);
+	var dl = r(d.style.left);
+	var stateObj = { foo: "bar" };
+	var setting = "h1t="+h1t+"&h2t="+h2t+"&ult="+ult+"&p1t="+p1t+"&p2t="+p2t+"&ft="+ft+"&dt="+dt;
+	setting += "&h2l="+h2l+"&ull="+ull+"&p1l="+p1l+"&p2l="+p2l+"&fl="+fl+"&dl="+dl
+	history.replaceState(stateObj, "page 2", "?"+setting);
+}
+function r(v) {
+	return v.replace('%','');
+}
