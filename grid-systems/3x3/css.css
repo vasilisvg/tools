@@ -58,6 +58,8 @@ ul {
 	top: 12vmin;
 	height: 16%;
 	display: block;
+}
+article ul {
 	text-align: center;
 }
 p {
@@ -71,7 +73,7 @@ article > p {
 	height: 5%;
 }
 p + p {
-	font-size: 3.3vmin;
+	font-size: 3.23vmin;
 	top: 30vmin;
 }
 footer {
