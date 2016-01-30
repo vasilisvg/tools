@@ -19,6 +19,8 @@ article {
 }
 article > * {
 	position: absolute;
+	display: flex;
+	align-items: center;
 }
 .grey > *:not(div) {
 	background: grey;
@@ -31,12 +33,14 @@ h1 {
 	line-height: 1.1;
 	width: 100%;
 	text-align: center;
+	height: 8%;
 }
 h2 {
 	margin: 0;
 	font-size: 4.5vmin;
 	width: 66.66667%;
 	top: 6vmin;
+	height: 6%;
 }
 ul {
 	line-height: 1.2;
@@ -46,6 +50,8 @@ ul {
 	width: 33.33333%;
 	font-size: 4vmin;
 	top: 12vmin;
+	height: 16%;
+	display: block;
 }
 p {
 	margin: 0;
@@ -53,6 +59,7 @@ p {
 	font-size: 3.8vmin;
 	width: 33.33333%;
 	top: 26vmin;
+	height: 5%;
 }
 p + p {
 	font-size: 3.3vmin;
@@ -64,6 +71,9 @@ footer {
 	width: 66.6666%;
 	font-size: 3.68vmin;
 	top: 34vmin;
+	height: 6%;
+	display: flex;
+	align-items: center;
 }
 
 div:first-of-type {
