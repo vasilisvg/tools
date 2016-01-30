@@ -140,7 +140,7 @@ aside > a {
 	top: 1em;
 	color: #666;
 }
-@@media print {
+@media print {
 	body > a {
 		display: none;
 	}
