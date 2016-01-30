@@ -30,7 +30,7 @@
 		Klik op een element om het focus te geven. Gebruik je pijltjestoetsen om het element omhoog, omlaag naar links of naar rechts te bewegen. De verschillende elementen hebben verschillende beperkingen. De bal kan overal neergezet worden. De header kan alleen naar boven of naar beneden. Afijn, probeer maar.
 	</p>
 	<ul>
-		<li><kbd>a</kbd> om dit hulpvenster te tonen/verbergen</li>
+		<li><kbd>w</kbd> om dit hulpvenster te tonen/verbergen</li>
 		<li><kbd>t</kbd> om het grid te tonen/verbergen</li>
 		<li><kbd>g</kbd> om de tekst te vervangen door grijze vlakken</li>
 	</ul>

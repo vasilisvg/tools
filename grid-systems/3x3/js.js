@@ -11,7 +11,7 @@ while (i < els.length) {
 }
 
 window.addEventListener('keydown', function(e) {
-	//console.log(e.keyCode);
+	console.log(e.keyCode);
 	var oneHundred = document.querySelector('article').offsetHeight;
 	//console.log(oneHundred)
 	var oneUnit = 1;
@@ -108,7 +108,7 @@ window.addEventListener('keydown', function(e) {
 	if (e.keyCode == 71) { // g = toggle grey
 		document.querySelector('article').classList.toggle('grey');
 	}
-	if (e.keyCode == 65) { // a = toggle help
+	if (e.keyCode == 87) { // w = toggle help/wat?
 		document.querySelector('aside').classList.toggle('show');
 	}
 	//console.log('has changed');

@@ -104,10 +104,17 @@ aside {
 	background: white;
 	box-sizing: border-box;
 	padding: 1em;
-	display: none;
+	opacity: 0;
+	z-index: -1;
+	transform: scale(0);
+	transition: opacity .4s,
+				transform .4s;
 }
 aside.show {
-	display: block;
+	opacity: 1;
+	transform: scale(1);
+	z-index: 1;
+	transition: transform .4s;
 }
 aside p,
 aside ul {
