@@ -9,6 +9,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
+	background: silver;
 }
 article {
 	width: 90vmin;
@@ -16,6 +17,7 @@ article {
 	border: 1px solid silver;
 	position: relative;
 	box-sizing: border-box;
+	background: white;
 }
 article > * {
 	position: absolute;
@@ -23,14 +25,19 @@ article > * {
 	align-items: center;
 	justify-content: center;
 	white-space: nowrap;
+	z-index: 1;
 }
 article > *:focus {
 	outline: none;
 	box-shadow: 0 0 0 1px red;
 }
-.grey > *:not(div) {
+article > *:not(div) {
 	background: grey;
 	color: grey;
+}
+.grey > *:not(div) {
+	background: transparent;
+	color: black;
 }
 
 h1 {
@@ -87,23 +94,23 @@ footer {
 	align-items: center;
 }
 
-div:first-of-type {
+article div:first-of-type {
 	width: 33.3333%;
 	height: inherit;
 	position: absolute;
 	left: calc(33.3333% - 1px);
 	border: solid silver;
 	border-width: 0 1px;
-	z-index: -1;
+	z-index: 0;
 }
-div:nth-of-type(2) {
+article div:nth-of-type(2) {
 	height: 33.3333%;
 	width: inherit;
 	position: absolute;
 	top: calc(33.3333% - 1px);
 	border: solid silver;
 	border-width: 1px 0;
-	z-index: -1;
+	z-index: 0;
 }
 .no-grid div:nth-of-type(-n + 2) {
 	display: none;
@@ -128,7 +135,6 @@ aside {
 	box-sizing: border-box;
 	padding: 1em;
 	opacity: 0;
-	z-index: -1;
 	transform: scale(0);
 	transition: opacity .4s,
 				transform .4s;
