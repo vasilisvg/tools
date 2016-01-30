@@ -13,7 +13,7 @@ while (i < els.length) {
 window.addEventListener('keydown', function(e) {
 	//console.log(e.keyCode);
 	var oneHundred = document.querySelector('article').offsetHeight;
-	console.log(oneHundred)
+	//console.log(oneHundred)
 	var oneUnit = 1;
 	if (e.altKey) {
 		oneUnit = oneUnit/3;
@@ -101,6 +101,7 @@ window.addEventListener('keydown', function(e) {
 			hasFocus.style.left =  oneUnit + '%';
 		}
 	}
+	//console.log(e.keyCode);
 	if (e.keyCode == 84) { // t = toggle grids
 		document.querySelector('article').classList.toggle('no-grid');
 	}
@@ -108,4 +109,3 @@ window.addEventListener('keydown', function(e) {
 		document.querySelector('article').classList.toggle('grey');
 	}
 });
-
