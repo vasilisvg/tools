@@ -24,7 +24,8 @@ article > * {
 	justify-content: center;
 }
 article > *:focus {
-	outline: 1px blue solid;
+	outline: none;
+	box-shadow: 0 0 0 1px red;
 }
 .grey > *:not(div) {
 	background: grey;
