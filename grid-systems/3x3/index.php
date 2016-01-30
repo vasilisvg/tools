@@ -52,7 +52,7 @@ $dl = $_GET["dl"];
 <aside id="wat">
 	<h1>Wat?</h1>
 	<p>
-		Klik op een element om het focus te geven. Gebruik je pijltjestoetsen om het element omhoog, omlaag naar links of naar rechts te bewegen. De verschillende elementen hebben verschillende beperkingen. De bal kan overal neergezet worden. De header kan alleen naar boven of naar beneden. Afijn, probeer maar.
+		Klik op een element om het focus te geven. Gebruik je pijltjestoetsen om het element omhoog, omlaag naar links of naar rechts te bewegen. De verschillende elementen hebben verschillende beperkingen. De bal kan overal neergezet worden. De header kan alleen naar boven of naar beneden. De rest kan <em>een beetje</em> naar links en rechts. Afijn, probeer maar.
 	</p>
 	<ul>
 		<li><kbd>w</kbd> om dit hulpvenster te tonen/verbergen</li>
