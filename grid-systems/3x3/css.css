@@ -59,6 +59,8 @@ p {
 	font-size: 3.8vmin;
 	width: 33.33333%;
 	top: 26vmin;
+}
+article > p {
 	height: 5%;
 }
 p + p {
