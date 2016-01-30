@@ -50,18 +50,18 @@ $dl = $_GET["dl"];
 </article>
 
 <aside id="wat">
-	<h1>Wat?</h1>
+	<h1>What?</h1>
 	<p>
-		Klik op een element om het focus te geven. Gebruik je pijltjestoetsen om het element omhoog, omlaag naar links of naar rechts te bewegen. De verschillende elementen hebben verschillende beperkingen. De bal kan overal neergezet worden. De header kan alleen naar boven of naar beneden. De rest kan <em>een beetje</em> naar links en rechts. Afijn, probeer maar.
+		Click on an element to give it focus. You can now use your arrow keys to move it up, down, left or right. Different elements have different restrictions, depending on size. The ball can move freely. The header can move up and down only. The other elements can move left and right a bit as well. You should just try it out.
 	</p>
 	<ul>
-		<li><kbd>w</kbd> om dit hulpvenster te tonen/verbergen</li>
-		<li><kbd>t</kbd> om het grid te tonen/verbergen</li>
-		<li><kbd>g</kbd> om de tekst te vervangen door grijze vlakken</li>
+		<li><kbd>w</kbd> to show/hide this help screen</li>
+		<li><kbd>t</kbd> to show/hide the grid</li>
+		<li><kbd>g</kbd> to replace the text with grey blocks</li>
 	</ul>
 	<a href="#">close</a>
 </aside>
-<a href="#wat">wat?</a>
+<a href="#wat">what?</a>
 <script src="js.js"></script>
 </body>
 </html>
