@@ -108,4 +108,8 @@ window.addEventListener('keydown', function(e) {
 	if (e.keyCode == 71) { // g = toggle grey
 		document.querySelector('article').classList.toggle('grey');
 	}
+	if (e.keyCode == 65) { // a = toggle help
+		document.querySelector('aside').classList.toggle('show');
+	}
+	//console.log('has changed');
 });

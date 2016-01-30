@@ -92,3 +92,30 @@ div:nth-of-type(2) {
 	background: grey;
 	top: 40.3vmin;
 }
+
+aside {
+	position: absolute;
+	width: 90vmin;
+	height: 90vmin;
+	border: 1px solid silver;
+	left: 50%;
+	margin-left: -45vmin;
+	margin-top: -45vmin;
+	background: white;
+	box-sizing: border-box;
+	padding: 1em;
+	display: none;
+}
+aside.show {
+	display: block;
+}
+aside p,
+aside ul {
+	max-width: 30em;
+	width: auto;
+	margin: 1em 0;
+}
+aside ul {
+	list-style: circle;
+	padding: 0 0 0 1em;
+}

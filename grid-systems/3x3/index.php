@@ -23,6 +23,18 @@
 	<footer tabindex="0">Ringling School of Art and Design</footer>
 	<div tabindex="0" class="dot"></div>
 </article>
+
+<aside>
+	<h1>Wat?</h1>
+	<p>
+		Klik op een element om het focus te geven. Gebruik je pijltjestoetsen om het element omhoog, omlaag naar links of naar rechts te bewegen. De verschillende elementen hebben verschillende beperkingen. De bal kan overal neergezet worden. De header kan alleen naar boven of naar beneden. Afijn, probeer maar.
+	</p>
+	<ul>
+		<li><kbd>a</kbd> om dit hulpvenster te tonen/verbergen</li>
+		<li><kbd>t</kbd> om het grid te tonen/verbergen</li>
+		<li><kbd>g</kbd> om de tekst te vervangen door grijze vlakken</li>
+	</ul>
+</aside>
 <script src="js.js"></script>
 </body>
 </html>
