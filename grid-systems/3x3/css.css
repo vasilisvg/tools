@@ -52,7 +52,7 @@ h2 {
 	margin: 0;
 	font-size: 4.47vmin;
 	width: 66.66667%;
-	top: 6vmin;
+	top: 9%;
 	height: 6%;
 }
 ul {
@@ -62,7 +62,7 @@ ul {
 	list-style: none;
 	width: 33.33333%;
 	font-size: 3.95vmin;
-	top: 12vmin;
+	top: 16%;
 	height: 16%;
 	display: block;
 }
@@ -74,21 +74,21 @@ p {
 	line-height: 1.2;
 	font-size: 3.8vmin;
 	width: 33.33333%;
-	top: 26vmin;
+	top: 33%;
 }
 article > p {
 	height: 5%;
 }
 p + p {
 	font-size: 3.23vmin;
-	top: 30vmin;
+	top: 39%;
 }
 footer {
 	margin: 0;
 	padding: 0;
 	width: 66.6666%;
 	font-size: 3.65vmin;
-	top: 34vmin;
+	top: 45%;
 	height: 6%;
 	display: flex;
 	align-items: center;
@@ -120,7 +120,7 @@ article div:nth-of-type(2) {
 	height: 8.333325%;
 	border-radius: 50%;
 	background: grey;
-	top: 40.3vmin;
+	top: 52%;
 }
 
 aside {
