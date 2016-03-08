@@ -83,7 +83,7 @@ $h1 = mt_rand(1,360);
 $s1 = mt_rand(70,100);
 $l1 = mt_rand(40,70);
 ?>
-<div class="v<?php echo mt_rand(0,1); ?>" style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"><div style="color:hsl(<?php echo $h1.','.$s1.'%,'.$l1.'%'; ?>);"><h1>Is dit goed leesbaar?</h1><p>
+<div class="v<?php echo mt_rand(0,1); ?>" style="background:hsl(<?php echo $h.','.$s.'%,'.$l.'%'; ?>);"><div style="color:hsl(<?php echo $h1.','.$s1.'%,'.$l1.'%'; ?>);"><h1 contenteditable>Is dit goed leesbaar?</h1><p>
 	Die grote tekst is vast wel te lezen. Maar kan je dit nog wel lezen? Ja? Mooi zo! En kan je het ook nog lezen als je je ogen dichtknijpt en door je oogharen heen kijkt? Ja? Dan kan waarschijnlijk iedereen het wel lezen.
 </p></div></div>
 <section>
