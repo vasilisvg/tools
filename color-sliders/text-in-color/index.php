@@ -103,6 +103,7 @@ $l1 = mt_rand(40,70);
 		Lightness (licht-donker) <output><?php echo $l; ?></output>
 		<input type="range" min="0" max="100" id="lig" value="<?php echo $l; ?>">
 		</label>
+		<output id="hex-bg"></output>
 	</fieldset>
 
 	<fieldset>
@@ -120,10 +121,12 @@ $l1 = mt_rand(40,70);
 		Lightness <output><?php echo $l1; ?></output>
 		<input data-name="2" type="range" min="0" max="100" id="lig1" value="<?php echo $l1; ?>">
 		</label>
+		<output id="hex-color"></output>
 	</fieldset>
 </form>
 </section>
 <!-- <button>Don’t click</button> -->
+<script src="../js/tinycolor.js"></script>
 <script>
 var $div= document.querySelector('div');
 
@@ -138,9 +141,13 @@ while(i<$sl.length){
 		lig = tInput[2];
 		if (this.getAttribute('data-name') === '2') {
 			document.querySelector('div div').style.color = 'hsl('+hue.value+','+sat.value+'%,'+lig.value+'%)';
+			var color = tinycolor('hsl('+hue.value+','+sat.value+'%,'+lig.value+'%)');
+			document.getElementById("hex-color").value = '#' + color.toHex(); // "ff0000"
 		}
 		else {
 			document.querySelector('div').style.background = 'hsl('+hue.value+','+sat.value+'%,'+lig.value+'%)';
+			var color = tinycolor('hsl('+hue.value+','+sat.value+'%,'+lig.value+'%)');
+			document.getElementById("hex-bg").value = '#' + color.toHex();
 		}
 
 		this.parentNode.querySelector('output').value=this.value;
