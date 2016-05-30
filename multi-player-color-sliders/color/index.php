@@ -67,7 +67,7 @@ output {
 </style>
 </head>
 <body class="">
-<?php 
+<?php
 $h = mt_rand(1,360);
 $s = mt_rand(20,80);
 $l = mt_rand(20,80);
@@ -91,11 +91,17 @@ Lightness <output><?php echo $l; ?></output>
 <script>
 var $div= document.querySelector('div');
 <?php include 'settings.php'; ?>
-var peer = new Peer({key: '<?php echo $key; ?>'});
-peer.on('open', function(id) {
-  document.body.classList.remove('loading');
-});
 
+if(!localStorage.getItem('yourId')) {
+	var array = new Uint32Array(3);
+    window.crypto.getRandomValues(array);
+    var yourId = array[0]+'-'+array[1]+'-'+array[2];
+	localStorage.setItem('yourId',yourId);
+}
+else {
+	var yourId = localStorage.getItem('yourId');
+}
+console.log(yourId);
 var $sl = document.querySelectorAll('input');
 var i = 0;
 while(i<$sl.length){
@@ -104,6 +110,11 @@ while(i<$sl.length){
 		this.parentNode.querySelector('output').value=this.value;
 	}
 	$sl[i].onchange = function(){
+		var peer = new Peer(yourId,{key: '<?php echo $key; ?>'});
+		peer.on('open', function(id) {
+		  document.body.classList.remove('loading');
+		});
+
 		var conn = peer.connect('<?php echo $teacher; ?>');
 		conn.on('open', function() {
 		  // Send messages
