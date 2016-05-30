@@ -110,7 +110,7 @@ while(i<$sl.length){
 		this.parentNode.querySelector('output').value=this.value;
 	}
 	$sl[i].onchange = function(){
-		var peer = new Peer({key: '<?php echo $key; ?>'});
+		var peer = new Peer(yourId,{key: '<?php echo $key; ?>'});
 		peer.on('open', function(id) {
 		  document.body.classList.remove('loading');
 		});
