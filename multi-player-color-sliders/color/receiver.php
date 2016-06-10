@@ -54,16 +54,16 @@ h1:nth-last-child(n + 1) {
 	opacity: 1;
 	display: block;
 }
-.go h1:nth-last-child(2) { opacity: .9; }
-.go h1:nth-last-child(3) { opacity: .8; }
-.go h1:nth-last-child(4) { opacity: .7; }
-.go h1:nth-last-child(5) { opacity: .6; }
-.go h1:nth-last-child(6) { opacity: .5; }
-.go h1:nth-last-child(7) { opacity: .4; }
-.go h1:nth-last-child(8) { opacity: .3; }
-.go h1:nth-last-child(9) { opacity: .2; }
-.go h1:nth-last-child(10) { opacity: .1; }
-.go h1:nth-last-child(11) { opacity: 0; }
+h1:nth-last-child(2) { opacity: .9; }
+h1:nth-last-child(3) { opacity: .8; }
+h1:nth-last-child(4) { opacity: .7; }
+h1:nth-last-child(5) { opacity: .6; }
+h1:nth-last-child(6) { opacity: .5; }
+h1:nth-last-child(7) { opacity: .4; }
+h1:nth-last-child(8) { opacity: .3; }
+h1:nth-last-child(9) { opacity: .2; }
+h1:nth-last-child(10) { opacity: .1; }
+h1:nth-last-child(11) { opacity: 0; }
 
 </style>
 </head>
