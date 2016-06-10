@@ -42,10 +42,31 @@ div.go::after {
 	font-size: 200%;
 	color: black;
 }
+h1 {
+	display: none;
+}
+.go h1 {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 30vh;
+	opacity: 1;
+}
+.go h1:nth-child(2) { opacity: .9; }
+.go h1:nth-child(3) { opacity: .8; }
+.go h1:nth-child(4) { opacity: .7; }
+.go h1:nth-child(5) { opacity: .6; }
+.go h1:nth-child(6) { opacity: .5; }
+.go h1:nth-child(7) { opacity: .4; }
+.go h1:nth-child(8) { opacity: .3; }
+.go h1:nth-child(9) { opacity: .2; }
+.go h1:nth-child(10) { opacity: .1; }
+.go h1:nth-child(11) { opacity: 0; }
+
 </style>
 </head>
 <body>
-<div></div>
+<div><h1>vvg.gr/nr</h1></div>
 <script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
 <script>
 <?php include 'settings.php'; ?>
@@ -53,7 +74,7 @@ var peer = new Peer('<?php echo $teacher; ?>',{key: '<?php echo $key; ?>'});
 peer.on('open', function(id) {
   document.querySelector('div').classList.add('go');
 });
-peer.on('connection', function(conn) { 
+peer.on('connection', function(conn) {
 	conn.on('open', function() {
 	  // Receive messages
 	  conn.on('data', function(data) {
