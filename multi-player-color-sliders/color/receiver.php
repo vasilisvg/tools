@@ -54,7 +54,7 @@ h1:nth-last-child(n + 1) {
 	opacity: 1;
 	display: block;
 }
-h1:nth-last-child(n+2) { opacity: .9; }
+h1:nth-last-child(n+2) { color: red; }
 h1:nth-last-child(n+3) { opacity: .8; }
 h1:nth-last-child(n+4) { opacity: .7; }
 h1:nth-last-child(n+5) { opacity: .6; }
