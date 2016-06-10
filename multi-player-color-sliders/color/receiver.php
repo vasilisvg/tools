@@ -45,7 +45,8 @@ div.go::after {
 h1 {
 	display: none;
 }
-.go h1 {
+.go h1,
+h1:nth-last-child(n + 1) {
 	position: absolute;
 	width: 100%;
 	text-align: center;
