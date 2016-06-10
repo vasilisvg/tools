@@ -38,7 +38,7 @@ div:empty::after {
 	color: gray;
 }
 div.go::after {
-	content: 'It works! You can start sliding now.';
+	//content: 'It works! You can start sliding now.';
 	font-size: 200%;
 	color: black;
 }
