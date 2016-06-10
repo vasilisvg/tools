@@ -75,7 +75,7 @@ h1:nth-last-child(n+11) { opacity: 0; }
 </head>
 <body>
 <div><h1>vvg.gr/nr</h1></div>
-<script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
+<script src="//cdn.peerjs.com/0.3/peer.min.js"></script>
 <script>
 <?php include 'settings.php'; ?>
 var peer = new Peer('<?php echo $teacher; ?>',{key: '<?php echo $key; ?>'});
