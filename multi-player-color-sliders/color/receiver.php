@@ -55,6 +55,8 @@ h1:nth-last-child(n + 1) {
 	display: block;
 	width: 20vw;
 	background: white;
+	left: 50vw;
+	margin-left: -10vw;
 }
 h1:nth-last-child(n+2) { opacity: .9; }
 h1:nth-last-child(n+3) { opacity: .8; }
