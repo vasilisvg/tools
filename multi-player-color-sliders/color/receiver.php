@@ -45,7 +45,7 @@ div.go::after {
 h1 {
 	display: none;
 	font-weight: normal;
-	font-size: 200%;
+	font-size: 230%;
 }
 .go h1,
 h1:nth-last-child(n + 1) {
