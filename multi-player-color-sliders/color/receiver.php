@@ -51,17 +51,18 @@ h1 {
 	text-align: center;
 	top: 30vh;
 	opacity: 1;
+	display: block;
 }
-.go h1:nth-child(2) { opacity: .9; }
-.go h1:nth-child(3) { opacity: .8; }
-.go h1:nth-child(4) { opacity: .7; }
-.go h1:nth-child(5) { opacity: .6; }
-.go h1:nth-child(6) { opacity: .5; }
-.go h1:nth-child(7) { opacity: .4; }
-.go h1:nth-child(8) { opacity: .3; }
-.go h1:nth-child(9) { opacity: .2; }
-.go h1:nth-child(10) { opacity: .1; }
-.go h1:nth-child(11) { opacity: 0; }
+.go h1:nth-last-child(2) { opacity: .9; }
+.go h1:nth-last-child(3) { opacity: .8; }
+.go h1:nth-last-child(4) { opacity: .7; }
+.go h1:nth-last-child(5) { opacity: .6; }
+.go h1:nth-last-child(6) { opacity: .5; }
+.go h1:nth-last-child(7) { opacity: .4; }
+.go h1:nth-last-child(8) { opacity: .3; }
+.go h1:nth-last-child(9) { opacity: .2; }
+.go h1:nth-last-child(10) { opacity: .1; }
+.go h1:nth-last-child(11) { opacity: 0; }
 
 </style>
 </head>
