@@ -61,6 +61,91 @@ output {
 	margin: 0 0 0 .2em;
 	display: inline-block;
 }
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 16.5px 0;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: rgba(0, 0, 0, 0.42);
+  border-radius: 2px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 36px;
+  border-radius: 50px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -16.7px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: rgba(13, 13, 13, 0.42);
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: rgba(0, 0, 0, 0.42);
+  border-radius: 2px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 36px;
+  border-radius: 50px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: rgba(0, 0, 0, 0.42);
+  border: 0.2px solid #010101;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: rgba(0, 0, 0, 0.42);
+  border: 0.2px solid #010101;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 36px;
+  border-radius: 50px;
+  background: #ffffff;
+  cursor: pointer;
+  height: 3px;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: rgba(0, 0, 0, 0.42);
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: rgba(13, 13, 13, 0.42);
+}
 .loading {
 	opacity: .2;
 }
@@ -100,11 +185,7 @@ if(!localStorage.getItem('yourId')) {
 else {
 	var yourId = localStorage.getItem('yourId');
 }
-var array = new Uint32Array(3);
-window.crypto.getRandomValues(array);
-var yourId = array[0]+'-'+array[1]+'-'+array[2];
-//localStorage.setItem('yourId',yourId);
-var peer = new Peer({key: '<?php echo $key; ?>'});
+var peer = new Peer(yourId,{key: '<?php echo $key; ?>'});
 peer.on('open', function(id) {
   document.body.classList.remove('loading');
 });
