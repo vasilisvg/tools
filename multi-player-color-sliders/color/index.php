@@ -104,7 +104,7 @@ var array = new Uint32Array(3);
 window.crypto.getRandomValues(array);
 var yourId = array[0]+'-'+array[1]+'-'+array[2];
 //localStorage.setItem('yourId',yourId);
-var peer = new Peer(yourId,{key: '<?php echo $key; ?>'});
+var peer = new Peer({key: '<?php echo $key; ?>'});
 peer.on('open', function(id) {
   document.body.classList.remove('loading');
 });
