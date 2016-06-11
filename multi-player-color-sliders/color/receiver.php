@@ -61,15 +61,15 @@ h1:nth-last-child(n + 2) {
 	margin-left: -10vw;
 }
 h1:nth-last-child(n+2) { opacity: .9; }
-h1:nth-last-child(n+3) { opacity: .8; }
-h1:nth-last-child(n+4) { opacity: .7; }
-h1:nth-last-child(n+5) { opacity: .6; }
-h1:nth-last-child(n+6) { opacity: .5; }
-h1:nth-last-child(n+7) { opacity: .4; }
-h1:nth-last-child(n+8) { opacity: .3; }
-h1:nth-last-child(n+9) { opacity: .2; }
-h1:nth-last-child(n+10) { opacity: .1; }
-h1:nth-last-child(n+11) { opacity: 0; }
+h1:nth-last-child(n+4) { opacity: .8; }
+h1:nth-last-child(n+6) { opacity: .7; }
+h1:nth-last-child(n+8) { opacity: .6; }
+h1:nth-last-child(n+10) { opacity: .5; }
+h1:nth-last-child(n+12) { opacity: .4; }
+h1:nth-last-child(n+14) { opacity: .3; }
+h1:nth-last-child(n+16) { opacity: .2; }
+h1:nth-last-child(n+18) { opacity: .1; }
+h1:nth-last-child(n+20) { opacity: 0; }
 
 </style>
 </head>
