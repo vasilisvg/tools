@@ -186,7 +186,7 @@ else {
 	var yourId = localStorage.getItem('yourId');
 }
 //var peer = new Peer(yourId,{key: '<?php echo $key; ?>'});
-var peer = new Peer(yourId,{key: '<?php echo $key; ?>'});
+var peer = new Peer({key: '<?php echo $key; ?>'});
 peer.on('open', function(id) {
   document.body.classList.remove('loading');
 });
