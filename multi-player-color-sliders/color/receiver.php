@@ -28,6 +28,36 @@ div {
 article {
 	flex: 1 1 20vw;
 }
+article:nth-last-of-type(n+4),
+article:nth-last-of-type(4) ~ * {
+	-webkit-flex: 1 1 50vmax;
+	    -ms-flex: 1 1 50vmax;
+	        flex: 1 1 50vmax;
+}
+article:nth-last-of-type(n+8),
+article:nth-last-of-type(8) ~ * {
+	-webkit-flex: 1 1 25vmax;
+	    -ms-flex: 1 1 25vmax;
+	        flex: 1 1 25vmax;
+}
+article:nth-last-of-type(n+20),
+article:nth-last-of-type(20) ~ * {
+	-webkit-flex: 1 1 20vmax;
+	    -ms-flex: 1 1 20vmax;
+	        flex: 1 1 20vmax;
+}
+article:nth-last-of-type(n+40),
+article:nth-last-of-type(40) ~ * {
+	-webkit-flex: 1 1 10vmax;
+	    -ms-flex: 1 1 10vmax;
+	        flex: 1 1 10vmax;
+}
+article:nth-last-of-type(n+120),
+article:nth-last-of-type(120) ~ * {
+	-webkit-flex: 1 1 5vmax;
+	    -ms-flex: 1 1 5vmax;
+	        flex: 1 1 5vmax;
+}
 div::after {
 	display: block;
 	padding: 11.1111vh 11.1111vw;
